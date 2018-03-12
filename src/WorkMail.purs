@@ -20,147 +20,201 @@ import Data.StrMap as StrMap
 import AWS.Request as Request
 import AWS.Request.Types as Types
 
-serviceName = "WorkMail" :: String
-
 
 -- | <p>Adds a member to the resource's set of delegates.</p>
 associateDelegateToResource :: forall eff. AssociateDelegateToResourceRequest -> Aff (exception :: EXCEPTION | eff) AssociateDelegateToResourceResponse
-associateDelegateToResource = Request.request serviceName "associateDelegateToResource" 
+associateDelegateToResource = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "associateDelegateToResource"
 
 
 -- | <p>Adds a member to the group's set.</p>
 associateMemberToGroup :: forall eff. AssociateMemberToGroupRequest -> Aff (exception :: EXCEPTION | eff) AssociateMemberToGroupResponse
-associateMemberToGroup = Request.request serviceName "associateMemberToGroup" 
+associateMemberToGroup = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "associateMemberToGroup"
 
 
 -- | <p>Adds an alias to the set of a given member of Amazon WorkMail.</p>
 createAlias :: forall eff. CreateAliasRequest -> Aff (exception :: EXCEPTION | eff) CreateAliasResponse
-createAlias = Request.request serviceName "createAlias" 
+createAlias = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "createAlias"
 
 
 -- | <p>Creates a group that can be used in Amazon WorkMail by calling the RegisterToWorkMail operation.</p>
 createGroup :: forall eff. CreateGroupRequest -> Aff (exception :: EXCEPTION | eff) CreateGroupResponse
-createGroup = Request.request serviceName "createGroup" 
+createGroup = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "createGroup"
 
 
 -- | <p>Creates a new Amazon WorkMail resource. The available types are equipment and room.</p>
 createResource :: forall eff. CreateResourceRequest -> Aff (exception :: EXCEPTION | eff) CreateResourceResponse
-createResource = Request.request serviceName "createResource" 
+createResource = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "createResource"
 
 
 -- | <p>Creates a user who can be used in Amazon WorkMail by calling the RegisterToWorkMail operation.</p>
 createUser :: forall eff. CreateUserRequest -> Aff (exception :: EXCEPTION | eff) CreateUserResponse
-createUser = Request.request serviceName "createUser" 
+createUser = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "createUser"
 
 
 -- | <p>Remove the alias from a set of aliases for a given user.</p>
 deleteAlias :: forall eff. DeleteAliasRequest -> Aff (exception :: EXCEPTION | eff) DeleteAliasResponse
-deleteAlias = Request.request serviceName "deleteAlias" 
+deleteAlias = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "deleteAlias"
 
 
 -- | <p>Deletes a group from Amazon WorkMail.</p>
 deleteGroup :: forall eff. DeleteGroupRequest -> Aff (exception :: EXCEPTION | eff) DeleteGroupResponse
-deleteGroup = Request.request serviceName "deleteGroup" 
+deleteGroup = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "deleteGroup"
 
 
 -- | <p>Deletes the specified resource. </p>
 deleteResource :: forall eff. DeleteResourceRequest -> Aff (exception :: EXCEPTION | eff) DeleteResourceResponse
-deleteResource = Request.request serviceName "deleteResource" 
+deleteResource = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "deleteResource"
 
 
 -- | <p>Deletes a user from Amazon WorkMail and all subsequent systems. The action can't be undone. The mailbox is kept as-is for a minimum of 30 days, without any means to restore it. </p>
 deleteUser :: forall eff. DeleteUserRequest -> Aff (exception :: EXCEPTION | eff) DeleteUserResponse
-deleteUser = Request.request serviceName "deleteUser" 
+deleteUser = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "deleteUser"
 
 
 -- | <p>Mark a user, group, or resource as no longer used in Amazon WorkMail. This action disassociates the mailbox and schedules it for clean-up. Amazon WorkMail keeps mailboxes for 30 days before they are permanently removed. The functionality in the console is <i>Disable</i>.</p>
 deregisterFromWorkMail :: forall eff. DeregisterFromWorkMailRequest -> Aff (exception :: EXCEPTION | eff) DeregisterFromWorkMailResponse
-deregisterFromWorkMail = Request.request serviceName "deregisterFromWorkMail" 
+deregisterFromWorkMail = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "deregisterFromWorkMail"
 
 
 -- | <p>Returns the data available for the group.</p>
 describeGroup :: forall eff. DescribeGroupRequest -> Aff (exception :: EXCEPTION | eff) DescribeGroupResponse
-describeGroup = Request.request serviceName "describeGroup" 
+describeGroup = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "describeGroup"
 
 
 -- | <p>Provides more information regarding a given organization based on its identifier.</p>
 describeOrganization :: forall eff. DescribeOrganizationRequest -> Aff (exception :: EXCEPTION | eff) DescribeOrganizationResponse
-describeOrganization = Request.request serviceName "describeOrganization" 
+describeOrganization = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "describeOrganization"
 
 
 -- | <p>Returns the data available for the resource.</p>
 describeResource :: forall eff. DescribeResourceRequest -> Aff (exception :: EXCEPTION | eff) DescribeResourceResponse
-describeResource = Request.request serviceName "describeResource" 
+describeResource = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "describeResource"
 
 
 -- | <p>Provides information regarding the user.</p>
 describeUser :: forall eff. DescribeUserRequest -> Aff (exception :: EXCEPTION | eff) DescribeUserResponse
-describeUser = Request.request serviceName "describeUser" 
+describeUser = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "describeUser"
 
 
 -- | <p>Removes a member from the resource's set of delegates.</p>
 disassociateDelegateFromResource :: forall eff. DisassociateDelegateFromResourceRequest -> Aff (exception :: EXCEPTION | eff) DisassociateDelegateFromResourceResponse
-disassociateDelegateFromResource = Request.request serviceName "disassociateDelegateFromResource" 
+disassociateDelegateFromResource = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "disassociateDelegateFromResource"
 
 
 -- | <p>Removes a member from a group.</p>
 disassociateMemberFromGroup :: forall eff. DisassociateMemberFromGroupRequest -> Aff (exception :: EXCEPTION | eff) DisassociateMemberFromGroupResponse
-disassociateMemberFromGroup = Request.request serviceName "disassociateMemberFromGroup" 
+disassociateMemberFromGroup = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "disassociateMemberFromGroup"
 
 
 -- | <p>Creates a paginated call to list the aliases associated with a given entity.</p>
 listAliases :: forall eff. ListAliasesRequest -> Aff (exception :: EXCEPTION | eff) ListAliasesResponse
-listAliases = Request.request serviceName "listAliases" 
+listAliases = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "listAliases"
 
 
 -- | <p>Returns an overview of the members of a group.</p>
 listGroupMembers :: forall eff. ListGroupMembersRequest -> Aff (exception :: EXCEPTION | eff) ListGroupMembersResponse
-listGroupMembers = Request.request serviceName "listGroupMembers" 
+listGroupMembers = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "listGroupMembers"
 
 
 -- | <p>Returns summaries of the organization's groups.</p>
 listGroups :: forall eff. ListGroupsRequest -> Aff (exception :: EXCEPTION | eff) ListGroupsResponse
-listGroups = Request.request serviceName "listGroups" 
+listGroups = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "listGroups"
 
 
 -- | <p>Returns summaries of the customer's non-deleted organizations.</p>
 listOrganizations :: forall eff. ListOrganizationsRequest -> Aff (exception :: EXCEPTION | eff) ListOrganizationsResponse
-listOrganizations = Request.request serviceName "listOrganizations" 
+listOrganizations = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "listOrganizations"
 
 
 -- | <p>Lists the delegates associated with a resource. Users and groups can be resource delegates and answer requests on behalf of the resource.</p>
 listResourceDelegates :: forall eff. ListResourceDelegatesRequest -> Aff (exception :: EXCEPTION | eff) ListResourceDelegatesResponse
-listResourceDelegates = Request.request serviceName "listResourceDelegates" 
+listResourceDelegates = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "listResourceDelegates"
 
 
 -- | <p>Returns summaries of the organization's resources.</p>
 listResources :: forall eff. ListResourcesRequest -> Aff (exception :: EXCEPTION | eff) ListResourcesResponse
-listResources = Request.request serviceName "listResources" 
+listResources = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "listResources"
 
 
 -- | <p>Returns summaries of the organization's users.</p>
 listUsers :: forall eff. ListUsersRequest -> Aff (exception :: EXCEPTION | eff) ListUsersResponse
-listUsers = Request.request serviceName "listUsers" 
+listUsers = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "listUsers"
 
 
 -- | <p>Registers an existing and disabled user, group, or resource/entity for Amazon WorkMail use by associating a mailbox and calendaring capabilities. It performs no change if the entity is enabled and fails if the entity is deleted. This operation results in the accumulation of costs. For more information, see <a href="http://aws.amazon.com/workmail/pricing">Pricing</a>. The equivalent console functionality for this operation is <i>Enable</i>. Users can either be created by calling the CreateUser API or they can be synchronized from your directory. For more information, see DeregisterFromWorkMail.</p>
 registerToWorkMail :: forall eff. RegisterToWorkMailRequest -> Aff (exception :: EXCEPTION | eff) RegisterToWorkMailResponse
-registerToWorkMail = Request.request serviceName "registerToWorkMail" 
+registerToWorkMail = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "registerToWorkMail"
 
 
 -- | <p>Allows the administrator to reset the password for a user.</p>
 resetPassword :: forall eff. ResetPasswordRequest -> Aff (exception :: EXCEPTION | eff) ResetPasswordResponse
-resetPassword = Request.request serviceName "resetPassword" 
+resetPassword = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "resetPassword"
 
 
 -- | <p>Updates the primary email for an entity. The current email is moved into the list of aliases (or swapped between an existing alias and the current primary email) and the email provided in the input is promoted as the primary.</p>
 updatePrimaryEmailAddress :: forall eff. UpdatePrimaryEmailAddressRequest -> Aff (exception :: EXCEPTION | eff) UpdatePrimaryEmailAddressResponse
-updatePrimaryEmailAddress = Request.request serviceName "updatePrimaryEmailAddress" 
+updatePrimaryEmailAddress = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "updatePrimaryEmailAddress"
 
 
 -- | <p>Updates data for the resource. It must be preceded by a describe call in order to have the latest information. The dataset in the request should be the one expected when performing another describe call.</p>
 updateResource :: forall eff. UpdateResourceRequest -> Aff (exception :: EXCEPTION | eff) UpdateResourceResponse
-updateResource = Request.request serviceName "updateResource" 
+updateResource = Request.request service method  where
+    service = Request.ServiceName "WorkMail"
+    method = Request.MethodName "updateResource"
 
 
 newtype Aliases = Aliases (Array EmailAddress)
