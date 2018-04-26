@@ -122,7 +122,7 @@ Encode AssociateMemberToGroupResponse
 
 ``` purescript
 newtype BookingOptions
-  = BookingOptions { "AutoAcceptRequests" :: NullOrUndefined (Boolean), "AutoDeclineRecurringRequests" :: NullOrUndefined (Boolean), "AutoDeclineConflictingRequests" :: NullOrUndefined (Boolean) }
+  = BookingOptions { "AutoAcceptRequests" :: Maybe (Boolean), "AutoDeclineRecurringRequests" :: Maybe (Boolean), "AutoDeclineConflictingRequests" :: Maybe (Boolean) }
 ```
 
 <p>At least one delegate must be associated to the resource to disable automatic replies from the resource.</p>
@@ -147,7 +147,7 @@ Constructs BookingOptions from required parameters
 #### `newBookingOptions'`
 
 ``` purescript
-newBookingOptions' :: ({ "AutoAcceptRequests" :: NullOrUndefined (Boolean), "AutoDeclineRecurringRequests" :: NullOrUndefined (Boolean), "AutoDeclineConflictingRequests" :: NullOrUndefined (Boolean) } -> { "AutoAcceptRequests" :: NullOrUndefined (Boolean), "AutoDeclineRecurringRequests" :: NullOrUndefined (Boolean), "AutoDeclineConflictingRequests" :: NullOrUndefined (Boolean) }) -> BookingOptions
+newBookingOptions' :: ({ "AutoAcceptRequests" :: Maybe (Boolean), "AutoDeclineRecurringRequests" :: Maybe (Boolean), "AutoDeclineConflictingRequests" :: Maybe (Boolean) } -> { "AutoAcceptRequests" :: Maybe (Boolean), "AutoDeclineRecurringRequests" :: Maybe (Boolean), "AutoDeclineConflictingRequests" :: Maybe (Boolean) }) -> BookingOptions
 ```
 
 Constructs BookingOptions's fields from required parameters
@@ -236,7 +236,7 @@ Constructs CreateGroupRequest's fields from required parameters
 
 ``` purescript
 newtype CreateGroupResponse
-  = CreateGroupResponse { "GroupId" :: NullOrUndefined (WorkMailIdentifier) }
+  = CreateGroupResponse { "GroupId" :: Maybe (WorkMailIdentifier) }
 ```
 
 ##### Instances
@@ -259,7 +259,7 @@ Constructs CreateGroupResponse from required parameters
 #### `newCreateGroupResponse'`
 
 ``` purescript
-newCreateGroupResponse' :: ({ "GroupId" :: NullOrUndefined (WorkMailIdentifier) } -> { "GroupId" :: NullOrUndefined (WorkMailIdentifier) }) -> CreateGroupResponse
+newCreateGroupResponse' :: ({ "GroupId" :: Maybe (WorkMailIdentifier) } -> { "GroupId" :: Maybe (WorkMailIdentifier) }) -> CreateGroupResponse
 ```
 
 Constructs CreateGroupResponse's fields from required parameters
@@ -300,7 +300,7 @@ Constructs CreateResourceRequest's fields from required parameters
 
 ``` purescript
 newtype CreateResourceResponse
-  = CreateResourceResponse { "ResourceId" :: NullOrUndefined (ResourceId) }
+  = CreateResourceResponse { "ResourceId" :: Maybe (ResourceId) }
 ```
 
 ##### Instances
@@ -323,7 +323,7 @@ Constructs CreateResourceResponse from required parameters
 #### `newCreateResourceResponse'`
 
 ``` purescript
-newCreateResourceResponse' :: ({ "ResourceId" :: NullOrUndefined (ResourceId) } -> { "ResourceId" :: NullOrUndefined (ResourceId) }) -> CreateResourceResponse
+newCreateResourceResponse' :: ({ "ResourceId" :: Maybe (ResourceId) } -> { "ResourceId" :: Maybe (ResourceId) }) -> CreateResourceResponse
 ```
 
 Constructs CreateResourceResponse's fields from required parameters
@@ -364,7 +364,7 @@ Constructs CreateUserRequest's fields from required parameters
 
 ``` purescript
 newtype CreateUserResponse
-  = CreateUserResponse { "UserId" :: NullOrUndefined (WorkMailIdentifier) }
+  = CreateUserResponse { "UserId" :: Maybe (WorkMailIdentifier) }
 ```
 
 ##### Instances
@@ -387,7 +387,7 @@ Constructs CreateUserResponse from required parameters
 #### `newCreateUserResponse'`
 
 ``` purescript
-newCreateUserResponse' :: ({ "UserId" :: NullOrUndefined (WorkMailIdentifier) } -> { "UserId" :: NullOrUndefined (WorkMailIdentifier) }) -> CreateUserResponse
+newCreateUserResponse' :: ({ "UserId" :: Maybe (WorkMailIdentifier) } -> { "UserId" :: Maybe (WorkMailIdentifier) }) -> CreateUserResponse
 ```
 
 Constructs CreateUserResponse's fields from required parameters
@@ -702,7 +702,7 @@ Constructs DescribeGroupRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeGroupResponse
-  = DescribeGroupResponse { "GroupId" :: NullOrUndefined (WorkMailIdentifier), "Name" :: NullOrUndefined (GroupName), "Email" :: NullOrUndefined (EmailAddress), "State" :: NullOrUndefined (EntityState), "EnabledDate" :: NullOrUndefined (Timestamp), "DisabledDate" :: NullOrUndefined (Timestamp) }
+  = DescribeGroupResponse { "GroupId" :: Maybe (WorkMailIdentifier), "Name" :: Maybe (GroupName), "Email" :: Maybe (EmailAddress), "State" :: Maybe (EntityState), "EnabledDate" :: Maybe (Timestamp), "DisabledDate" :: Maybe (Timestamp) }
 ```
 
 ##### Instances
@@ -725,7 +725,7 @@ Constructs DescribeGroupResponse from required parameters
 #### `newDescribeGroupResponse'`
 
 ``` purescript
-newDescribeGroupResponse' :: ({ "GroupId" :: NullOrUndefined (WorkMailIdentifier), "Name" :: NullOrUndefined (GroupName), "Email" :: NullOrUndefined (EmailAddress), "State" :: NullOrUndefined (EntityState), "EnabledDate" :: NullOrUndefined (Timestamp), "DisabledDate" :: NullOrUndefined (Timestamp) } -> { "GroupId" :: NullOrUndefined (WorkMailIdentifier), "Name" :: NullOrUndefined (GroupName), "Email" :: NullOrUndefined (EmailAddress), "State" :: NullOrUndefined (EntityState), "EnabledDate" :: NullOrUndefined (Timestamp), "DisabledDate" :: NullOrUndefined (Timestamp) }) -> DescribeGroupResponse
+newDescribeGroupResponse' :: ({ "GroupId" :: Maybe (WorkMailIdentifier), "Name" :: Maybe (GroupName), "Email" :: Maybe (EmailAddress), "State" :: Maybe (EntityState), "EnabledDate" :: Maybe (Timestamp), "DisabledDate" :: Maybe (Timestamp) } -> { "GroupId" :: Maybe (WorkMailIdentifier), "Name" :: Maybe (GroupName), "Email" :: Maybe (EmailAddress), "State" :: Maybe (EntityState), "EnabledDate" :: Maybe (Timestamp), "DisabledDate" :: Maybe (Timestamp) }) -> DescribeGroupResponse
 ```
 
 Constructs DescribeGroupResponse's fields from required parameters
@@ -766,7 +766,7 @@ Constructs DescribeOrganizationRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeOrganizationResponse
-  = DescribeOrganizationResponse { "OrganizationId" :: NullOrUndefined (OrganizationId), "Alias" :: NullOrUndefined (OrganizationName), "State" :: NullOrUndefined (String), "DirectoryId" :: NullOrUndefined (String), "DirectoryType" :: NullOrUndefined (String), "DefaultMailDomain" :: NullOrUndefined (String), "CompletedDate" :: NullOrUndefined (Timestamp), "ErrorMessage" :: NullOrUndefined (String) }
+  = DescribeOrganizationResponse { "OrganizationId" :: Maybe (OrganizationId), "Alias" :: Maybe (OrganizationName), "State" :: Maybe (String), "DirectoryId" :: Maybe (String), "DirectoryType" :: Maybe (String), "DefaultMailDomain" :: Maybe (String), "CompletedDate" :: Maybe (Timestamp), "ErrorMessage" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -789,7 +789,7 @@ Constructs DescribeOrganizationResponse from required parameters
 #### `newDescribeOrganizationResponse'`
 
 ``` purescript
-newDescribeOrganizationResponse' :: ({ "OrganizationId" :: NullOrUndefined (OrganizationId), "Alias" :: NullOrUndefined (OrganizationName), "State" :: NullOrUndefined (String), "DirectoryId" :: NullOrUndefined (String), "DirectoryType" :: NullOrUndefined (String), "DefaultMailDomain" :: NullOrUndefined (String), "CompletedDate" :: NullOrUndefined (Timestamp), "ErrorMessage" :: NullOrUndefined (String) } -> { "OrganizationId" :: NullOrUndefined (OrganizationId), "Alias" :: NullOrUndefined (OrganizationName), "State" :: NullOrUndefined (String), "DirectoryId" :: NullOrUndefined (String), "DirectoryType" :: NullOrUndefined (String), "DefaultMailDomain" :: NullOrUndefined (String), "CompletedDate" :: NullOrUndefined (Timestamp), "ErrorMessage" :: NullOrUndefined (String) }) -> DescribeOrganizationResponse
+newDescribeOrganizationResponse' :: ({ "OrganizationId" :: Maybe (OrganizationId), "Alias" :: Maybe (OrganizationName), "State" :: Maybe (String), "DirectoryId" :: Maybe (String), "DirectoryType" :: Maybe (String), "DefaultMailDomain" :: Maybe (String), "CompletedDate" :: Maybe (Timestamp), "ErrorMessage" :: Maybe (String) } -> { "OrganizationId" :: Maybe (OrganizationId), "Alias" :: Maybe (OrganizationName), "State" :: Maybe (String), "DirectoryId" :: Maybe (String), "DirectoryType" :: Maybe (String), "DefaultMailDomain" :: Maybe (String), "CompletedDate" :: Maybe (Timestamp), "ErrorMessage" :: Maybe (String) }) -> DescribeOrganizationResponse
 ```
 
 Constructs DescribeOrganizationResponse's fields from required parameters
@@ -830,7 +830,7 @@ Constructs DescribeResourceRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeResourceResponse
-  = DescribeResourceResponse { "ResourceId" :: NullOrUndefined (ResourceId), "Email" :: NullOrUndefined (EmailAddress), "Name" :: NullOrUndefined (ResourceName), "Type" :: NullOrUndefined (ResourceType), "BookingOptions" :: NullOrUndefined (BookingOptions), "State" :: NullOrUndefined (EntityState), "EnabledDate" :: NullOrUndefined (Timestamp), "DisabledDate" :: NullOrUndefined (Timestamp) }
+  = DescribeResourceResponse { "ResourceId" :: Maybe (ResourceId), "Email" :: Maybe (EmailAddress), "Name" :: Maybe (ResourceName), "Type" :: Maybe (ResourceType), "BookingOptions" :: Maybe (BookingOptions), "State" :: Maybe (EntityState), "EnabledDate" :: Maybe (Timestamp), "DisabledDate" :: Maybe (Timestamp) }
 ```
 
 ##### Instances
@@ -853,7 +853,7 @@ Constructs DescribeResourceResponse from required parameters
 #### `newDescribeResourceResponse'`
 
 ``` purescript
-newDescribeResourceResponse' :: ({ "ResourceId" :: NullOrUndefined (ResourceId), "Email" :: NullOrUndefined (EmailAddress), "Name" :: NullOrUndefined (ResourceName), "Type" :: NullOrUndefined (ResourceType), "BookingOptions" :: NullOrUndefined (BookingOptions), "State" :: NullOrUndefined (EntityState), "EnabledDate" :: NullOrUndefined (Timestamp), "DisabledDate" :: NullOrUndefined (Timestamp) } -> { "ResourceId" :: NullOrUndefined (ResourceId), "Email" :: NullOrUndefined (EmailAddress), "Name" :: NullOrUndefined (ResourceName), "Type" :: NullOrUndefined (ResourceType), "BookingOptions" :: NullOrUndefined (BookingOptions), "State" :: NullOrUndefined (EntityState), "EnabledDate" :: NullOrUndefined (Timestamp), "DisabledDate" :: NullOrUndefined (Timestamp) }) -> DescribeResourceResponse
+newDescribeResourceResponse' :: ({ "ResourceId" :: Maybe (ResourceId), "Email" :: Maybe (EmailAddress), "Name" :: Maybe (ResourceName), "Type" :: Maybe (ResourceType), "BookingOptions" :: Maybe (BookingOptions), "State" :: Maybe (EntityState), "EnabledDate" :: Maybe (Timestamp), "DisabledDate" :: Maybe (Timestamp) } -> { "ResourceId" :: Maybe (ResourceId), "Email" :: Maybe (EmailAddress), "Name" :: Maybe (ResourceName), "Type" :: Maybe (ResourceType), "BookingOptions" :: Maybe (BookingOptions), "State" :: Maybe (EntityState), "EnabledDate" :: Maybe (Timestamp), "DisabledDate" :: Maybe (Timestamp) }) -> DescribeResourceResponse
 ```
 
 Constructs DescribeResourceResponse's fields from required parameters
@@ -894,7 +894,7 @@ Constructs DescribeUserRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeUserResponse
-  = DescribeUserResponse { "UserId" :: NullOrUndefined (WorkMailIdentifier), "Name" :: NullOrUndefined (UserName), "Email" :: NullOrUndefined (EmailAddress), "DisplayName" :: NullOrUndefined (String), "State" :: NullOrUndefined (EntityState), "UserRole" :: NullOrUndefined (UserRole), "EnabledDate" :: NullOrUndefined (Timestamp), "DisabledDate" :: NullOrUndefined (Timestamp) }
+  = DescribeUserResponse { "UserId" :: Maybe (WorkMailIdentifier), "Name" :: Maybe (UserName), "Email" :: Maybe (EmailAddress), "DisplayName" :: Maybe (String), "State" :: Maybe (EntityState), "UserRole" :: Maybe (UserRole), "EnabledDate" :: Maybe (Timestamp), "DisabledDate" :: Maybe (Timestamp) }
 ```
 
 ##### Instances
@@ -917,7 +917,7 @@ Constructs DescribeUserResponse from required parameters
 #### `newDescribeUserResponse'`
 
 ``` purescript
-newDescribeUserResponse' :: ({ "UserId" :: NullOrUndefined (WorkMailIdentifier), "Name" :: NullOrUndefined (UserName), "Email" :: NullOrUndefined (EmailAddress), "DisplayName" :: NullOrUndefined (String), "State" :: NullOrUndefined (EntityState), "UserRole" :: NullOrUndefined (UserRole), "EnabledDate" :: NullOrUndefined (Timestamp), "DisabledDate" :: NullOrUndefined (Timestamp) } -> { "UserId" :: NullOrUndefined (WorkMailIdentifier), "Name" :: NullOrUndefined (UserName), "Email" :: NullOrUndefined (EmailAddress), "DisplayName" :: NullOrUndefined (String), "State" :: NullOrUndefined (EntityState), "UserRole" :: NullOrUndefined (UserRole), "EnabledDate" :: NullOrUndefined (Timestamp), "DisabledDate" :: NullOrUndefined (Timestamp) }) -> DescribeUserResponse
+newDescribeUserResponse' :: ({ "UserId" :: Maybe (WorkMailIdentifier), "Name" :: Maybe (UserName), "Email" :: Maybe (EmailAddress), "DisplayName" :: Maybe (String), "State" :: Maybe (EntityState), "UserRole" :: Maybe (UserRole), "EnabledDate" :: Maybe (Timestamp), "DisabledDate" :: Maybe (Timestamp) } -> { "UserId" :: Maybe (WorkMailIdentifier), "Name" :: Maybe (UserName), "Email" :: Maybe (EmailAddress), "DisplayName" :: Maybe (String), "State" :: Maybe (EntityState), "UserRole" :: Maybe (UserRole), "EnabledDate" :: Maybe (Timestamp), "DisabledDate" :: Maybe (Timestamp) }) -> DescribeUserResponse
 ```
 
 Constructs DescribeUserResponse's fields from required parameters
@@ -926,7 +926,7 @@ Constructs DescribeUserResponse's fields from required parameters
 
 ``` purescript
 newtype DirectoryServiceAuthenticationFailedException
-  = DirectoryServiceAuthenticationFailedException { "Message" :: NullOrUndefined (String) }
+  = DirectoryServiceAuthenticationFailedException { "Message" :: Maybe (String) }
 ```
 
 <p>The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail service.</p>
@@ -951,7 +951,7 @@ Constructs DirectoryServiceAuthenticationFailedException from required parameter
 #### `newDirectoryServiceAuthenticationFailedException'`
 
 ``` purescript
-newDirectoryServiceAuthenticationFailedException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> DirectoryServiceAuthenticationFailedException
+newDirectoryServiceAuthenticationFailedException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> DirectoryServiceAuthenticationFailedException
 ```
 
 Constructs DirectoryServiceAuthenticationFailedException's fields from required parameters
@@ -960,7 +960,7 @@ Constructs DirectoryServiceAuthenticationFailedException's fields from required 
 
 ``` purescript
 newtype DirectoryUnavailableException
-  = DirectoryUnavailableException { "Message" :: NullOrUndefined (String) }
+  = DirectoryUnavailableException { "Message" :: Maybe (String) }
 ```
 
 <p>The directory that you are trying to perform operations on isn't available.</p>
@@ -985,7 +985,7 @@ Constructs DirectoryUnavailableException from required parameters
 #### `newDirectoryUnavailableException'`
 
 ``` purescript
-newDirectoryUnavailableException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> DirectoryUnavailableException
+newDirectoryUnavailableException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> DirectoryUnavailableException
 ```
 
 Constructs DirectoryUnavailableException's fields from required parameters
@@ -1106,7 +1106,7 @@ Encode EmailAddress
 
 ``` purescript
 newtype EmailAddressInUseException
-  = EmailAddressInUseException { "Message" :: NullOrUndefined (String) }
+  = EmailAddressInUseException { "Message" :: Maybe (String) }
 ```
 
 <p>The email address that you're trying to assign is already created for a different user, group, or resource.</p>
@@ -1131,7 +1131,7 @@ Constructs EmailAddressInUseException from required parameters
 #### `newEmailAddressInUseException'`
 
 ``` purescript
-newEmailAddressInUseException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> EmailAddressInUseException
+newEmailAddressInUseException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> EmailAddressInUseException
 ```
 
 Constructs EmailAddressInUseException's fields from required parameters
@@ -1140,7 +1140,7 @@ Constructs EmailAddressInUseException's fields from required parameters
 
 ``` purescript
 newtype EntityAlreadyRegisteredException
-  = EntityAlreadyRegisteredException { "Message" :: NullOrUndefined (String) }
+  = EntityAlreadyRegisteredException { "Message" :: Maybe (String) }
 ```
 
 <p>The user, group, or resource that you're trying to register is already registered.</p>
@@ -1165,7 +1165,7 @@ Constructs EntityAlreadyRegisteredException from required parameters
 #### `newEntityAlreadyRegisteredException'`
 
 ``` purescript
-newEntityAlreadyRegisteredException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> EntityAlreadyRegisteredException
+newEntityAlreadyRegisteredException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> EntityAlreadyRegisteredException
 ```
 
 Constructs EntityAlreadyRegisteredException's fields from required parameters
@@ -1174,7 +1174,7 @@ Constructs EntityAlreadyRegisteredException's fields from required parameters
 
 ``` purescript
 newtype EntityNotFoundException
-  = EntityNotFoundException { "Message" :: NullOrUndefined (String) }
+  = EntityNotFoundException { "Message" :: Maybe (String) }
 ```
 
 <p>The identifier supplied for the entity is valid, but it does not exist in your organization.</p>
@@ -1199,7 +1199,7 @@ Constructs EntityNotFoundException from required parameters
 #### `newEntityNotFoundException'`
 
 ``` purescript
-newEntityNotFoundException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> EntityNotFoundException
+newEntityNotFoundException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> EntityNotFoundException
 ```
 
 Constructs EntityNotFoundException's fields from required parameters
@@ -1224,7 +1224,7 @@ Encode EntityState
 
 ``` purescript
 newtype EntityStateException
-  = EntityStateException { "Message" :: NullOrUndefined (String) }
+  = EntityStateException { "Message" :: Maybe (String) }
 ```
 
 <p>You are performing an operation on an entity that isn't in the expected state, such as trying to update a deleted user.</p>
@@ -1249,7 +1249,7 @@ Constructs EntityStateException from required parameters
 #### `newEntityStateException'`
 
 ``` purescript
-newEntityStateException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> EntityStateException
+newEntityStateException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> EntityStateException
 ```
 
 Constructs EntityStateException's fields from required parameters
@@ -1258,7 +1258,7 @@ Constructs EntityStateException's fields from required parameters
 
 ``` purescript
 newtype Group
-  = Group { "Id" :: NullOrUndefined (WorkMailIdentifier), "Email" :: NullOrUndefined (EmailAddress), "Name" :: NullOrUndefined (GroupName), "State" :: NullOrUndefined (EntityState), "EnabledDate" :: NullOrUndefined (Timestamp), "DisabledDate" :: NullOrUndefined (Timestamp) }
+  = Group { "Id" :: Maybe (WorkMailIdentifier), "Email" :: Maybe (EmailAddress), "Name" :: Maybe (GroupName), "State" :: Maybe (EntityState), "EnabledDate" :: Maybe (Timestamp), "DisabledDate" :: Maybe (Timestamp) }
 ```
 
 <p>The representation of an Amazon WorkMail group.</p>
@@ -1283,7 +1283,7 @@ Constructs Group from required parameters
 #### `newGroup'`
 
 ``` purescript
-newGroup' :: ({ "Id" :: NullOrUndefined (WorkMailIdentifier), "Email" :: NullOrUndefined (EmailAddress), "Name" :: NullOrUndefined (GroupName), "State" :: NullOrUndefined (EntityState), "EnabledDate" :: NullOrUndefined (Timestamp), "DisabledDate" :: NullOrUndefined (Timestamp) } -> { "Id" :: NullOrUndefined (WorkMailIdentifier), "Email" :: NullOrUndefined (EmailAddress), "Name" :: NullOrUndefined (GroupName), "State" :: NullOrUndefined (EntityState), "EnabledDate" :: NullOrUndefined (Timestamp), "DisabledDate" :: NullOrUndefined (Timestamp) }) -> Group
+newGroup' :: ({ "Id" :: Maybe (WorkMailIdentifier), "Email" :: Maybe (EmailAddress), "Name" :: Maybe (GroupName), "State" :: Maybe (EntityState), "EnabledDate" :: Maybe (Timestamp), "DisabledDate" :: Maybe (Timestamp) } -> { "Id" :: Maybe (WorkMailIdentifier), "Email" :: Maybe (EmailAddress), "Name" :: Maybe (GroupName), "State" :: Maybe (EntityState), "EnabledDate" :: Maybe (Timestamp), "DisabledDate" :: Maybe (Timestamp) }) -> Group
 ```
 
 Constructs Group's fields from required parameters
@@ -1324,7 +1324,7 @@ Encode Groups
 
 ``` purescript
 newtype InvalidConfigurationException
-  = InvalidConfigurationException { "Message" :: NullOrUndefined (String) }
+  = InvalidConfigurationException { "Message" :: Maybe (String) }
 ```
 
 <p>The configuration for a resource isn't valid. A resource must either be able to auto-respond to requests or have at least one delegate associated that can do it on its behalf.</p>
@@ -1349,7 +1349,7 @@ Constructs InvalidConfigurationException from required parameters
 #### `newInvalidConfigurationException'`
 
 ``` purescript
-newInvalidConfigurationException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidConfigurationException
+newInvalidConfigurationException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidConfigurationException
 ```
 
 Constructs InvalidConfigurationException's fields from required parameters
@@ -1358,7 +1358,7 @@ Constructs InvalidConfigurationException's fields from required parameters
 
 ``` purescript
 newtype InvalidParameterException
-  = InvalidParameterException { "Message" :: NullOrUndefined (String) }
+  = InvalidParameterException { "Message" :: Maybe (String) }
 ```
 
 <p>One or more of the input parameters don't match the service's restrictions.</p>
@@ -1383,7 +1383,7 @@ Constructs InvalidParameterException from required parameters
 #### `newInvalidParameterException'`
 
 ``` purescript
-newInvalidParameterException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidParameterException
+newInvalidParameterException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidParameterException
 ```
 
 Constructs InvalidParameterException's fields from required parameters
@@ -1392,7 +1392,7 @@ Constructs InvalidParameterException's fields from required parameters
 
 ``` purescript
 newtype InvalidPasswordException
-  = InvalidPasswordException { "Message" :: NullOrUndefined (String) }
+  = InvalidPasswordException { "Message" :: Maybe (String) }
 ```
 
 <p>The supplied password doesn't match the minimum security constraints, such as length or use of special characters.</p>
@@ -1417,7 +1417,7 @@ Constructs InvalidPasswordException from required parameters
 #### `newInvalidPasswordException'`
 
 ``` purescript
-newInvalidPasswordException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidPasswordException
+newInvalidPasswordException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidPasswordException
 ```
 
 Constructs InvalidPasswordException's fields from required parameters
@@ -1426,7 +1426,7 @@ Constructs InvalidPasswordException's fields from required parameters
 
 ``` purescript
 newtype ListAliasesRequest
-  = ListAliasesRequest { "OrganizationId" :: OrganizationId, "EntityId" :: WorkMailIdentifier, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }
+  = ListAliasesRequest { "OrganizationId" :: OrganizationId, "EntityId" :: WorkMailIdentifier, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }
 ```
 
 ##### Instances
@@ -1449,7 +1449,7 @@ Constructs ListAliasesRequest from required parameters
 #### `newListAliasesRequest'`
 
 ``` purescript
-newListAliasesRequest' :: WorkMailIdentifier -> OrganizationId -> ({ "OrganizationId" :: OrganizationId, "EntityId" :: WorkMailIdentifier, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) } -> { "OrganizationId" :: OrganizationId, "EntityId" :: WorkMailIdentifier, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }) -> ListAliasesRequest
+newListAliasesRequest' :: WorkMailIdentifier -> OrganizationId -> ({ "OrganizationId" :: OrganizationId, "EntityId" :: WorkMailIdentifier, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) } -> { "OrganizationId" :: OrganizationId, "EntityId" :: WorkMailIdentifier, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }) -> ListAliasesRequest
 ```
 
 Constructs ListAliasesRequest's fields from required parameters
@@ -1458,7 +1458,7 @@ Constructs ListAliasesRequest's fields from required parameters
 
 ``` purescript
 newtype ListAliasesResponse
-  = ListAliasesResponse { "Aliases" :: NullOrUndefined (Aliases), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListAliasesResponse { "Aliases" :: Maybe (Aliases), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -1481,7 +1481,7 @@ Constructs ListAliasesResponse from required parameters
 #### `newListAliasesResponse'`
 
 ``` purescript
-newListAliasesResponse' :: ({ "Aliases" :: NullOrUndefined (Aliases), "NextToken" :: NullOrUndefined (NextToken) } -> { "Aliases" :: NullOrUndefined (Aliases), "NextToken" :: NullOrUndefined (NextToken) }) -> ListAliasesResponse
+newListAliasesResponse' :: ({ "Aliases" :: Maybe (Aliases), "NextToken" :: Maybe (NextToken) } -> { "Aliases" :: Maybe (Aliases), "NextToken" :: Maybe (NextToken) }) -> ListAliasesResponse
 ```
 
 Constructs ListAliasesResponse's fields from required parameters
@@ -1490,7 +1490,7 @@ Constructs ListAliasesResponse's fields from required parameters
 
 ``` purescript
 newtype ListGroupMembersRequest
-  = ListGroupMembersRequest { "OrganizationId" :: OrganizationId, "GroupId" :: WorkMailIdentifier, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }
+  = ListGroupMembersRequest { "OrganizationId" :: OrganizationId, "GroupId" :: WorkMailIdentifier, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }
 ```
 
 ##### Instances
@@ -1513,7 +1513,7 @@ Constructs ListGroupMembersRequest from required parameters
 #### `newListGroupMembersRequest'`
 
 ``` purescript
-newListGroupMembersRequest' :: WorkMailIdentifier -> OrganizationId -> ({ "OrganizationId" :: OrganizationId, "GroupId" :: WorkMailIdentifier, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) } -> { "OrganizationId" :: OrganizationId, "GroupId" :: WorkMailIdentifier, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }) -> ListGroupMembersRequest
+newListGroupMembersRequest' :: WorkMailIdentifier -> OrganizationId -> ({ "OrganizationId" :: OrganizationId, "GroupId" :: WorkMailIdentifier, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) } -> { "OrganizationId" :: OrganizationId, "GroupId" :: WorkMailIdentifier, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }) -> ListGroupMembersRequest
 ```
 
 Constructs ListGroupMembersRequest's fields from required parameters
@@ -1522,7 +1522,7 @@ Constructs ListGroupMembersRequest's fields from required parameters
 
 ``` purescript
 newtype ListGroupMembersResponse
-  = ListGroupMembersResponse { "Members" :: NullOrUndefined (Members), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListGroupMembersResponse { "Members" :: Maybe (Members), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -1545,7 +1545,7 @@ Constructs ListGroupMembersResponse from required parameters
 #### `newListGroupMembersResponse'`
 
 ``` purescript
-newListGroupMembersResponse' :: ({ "Members" :: NullOrUndefined (Members), "NextToken" :: NullOrUndefined (NextToken) } -> { "Members" :: NullOrUndefined (Members), "NextToken" :: NullOrUndefined (NextToken) }) -> ListGroupMembersResponse
+newListGroupMembersResponse' :: ({ "Members" :: Maybe (Members), "NextToken" :: Maybe (NextToken) } -> { "Members" :: Maybe (Members), "NextToken" :: Maybe (NextToken) }) -> ListGroupMembersResponse
 ```
 
 Constructs ListGroupMembersResponse's fields from required parameters
@@ -1554,7 +1554,7 @@ Constructs ListGroupMembersResponse's fields from required parameters
 
 ``` purescript
 newtype ListGroupsRequest
-  = ListGroupsRequest { "OrganizationId" :: OrganizationId, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }
+  = ListGroupsRequest { "OrganizationId" :: OrganizationId, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }
 ```
 
 ##### Instances
@@ -1577,7 +1577,7 @@ Constructs ListGroupsRequest from required parameters
 #### `newListGroupsRequest'`
 
 ``` purescript
-newListGroupsRequest' :: OrganizationId -> ({ "OrganizationId" :: OrganizationId, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) } -> { "OrganizationId" :: OrganizationId, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }) -> ListGroupsRequest
+newListGroupsRequest' :: OrganizationId -> ({ "OrganizationId" :: OrganizationId, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) } -> { "OrganizationId" :: OrganizationId, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }) -> ListGroupsRequest
 ```
 
 Constructs ListGroupsRequest's fields from required parameters
@@ -1586,7 +1586,7 @@ Constructs ListGroupsRequest's fields from required parameters
 
 ``` purescript
 newtype ListGroupsResponse
-  = ListGroupsResponse { "Groups" :: NullOrUndefined (Groups), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListGroupsResponse { "Groups" :: Maybe (Groups), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -1609,7 +1609,7 @@ Constructs ListGroupsResponse from required parameters
 #### `newListGroupsResponse'`
 
 ``` purescript
-newListGroupsResponse' :: ({ "Groups" :: NullOrUndefined (Groups), "NextToken" :: NullOrUndefined (NextToken) } -> { "Groups" :: NullOrUndefined (Groups), "NextToken" :: NullOrUndefined (NextToken) }) -> ListGroupsResponse
+newListGroupsResponse' :: ({ "Groups" :: Maybe (Groups), "NextToken" :: Maybe (NextToken) } -> { "Groups" :: Maybe (Groups), "NextToken" :: Maybe (NextToken) }) -> ListGroupsResponse
 ```
 
 Constructs ListGroupsResponse's fields from required parameters
@@ -1618,7 +1618,7 @@ Constructs ListGroupsResponse's fields from required parameters
 
 ``` purescript
 newtype ListOrganizationsRequest
-  = ListOrganizationsRequest { "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }
+  = ListOrganizationsRequest { "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }
 ```
 
 ##### Instances
@@ -1641,7 +1641,7 @@ Constructs ListOrganizationsRequest from required parameters
 #### `newListOrganizationsRequest'`
 
 ``` purescript
-newListOrganizationsRequest' :: ({ "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) } -> { "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }) -> ListOrganizationsRequest
+newListOrganizationsRequest' :: ({ "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) } -> { "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }) -> ListOrganizationsRequest
 ```
 
 Constructs ListOrganizationsRequest's fields from required parameters
@@ -1650,7 +1650,7 @@ Constructs ListOrganizationsRequest's fields from required parameters
 
 ``` purescript
 newtype ListOrganizationsResponse
-  = ListOrganizationsResponse { "OrganizationSummaries" :: NullOrUndefined (OrganizationSummaries), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListOrganizationsResponse { "OrganizationSummaries" :: Maybe (OrganizationSummaries), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -1673,7 +1673,7 @@ Constructs ListOrganizationsResponse from required parameters
 #### `newListOrganizationsResponse'`
 
 ``` purescript
-newListOrganizationsResponse' :: ({ "OrganizationSummaries" :: NullOrUndefined (OrganizationSummaries), "NextToken" :: NullOrUndefined (NextToken) } -> { "OrganizationSummaries" :: NullOrUndefined (OrganizationSummaries), "NextToken" :: NullOrUndefined (NextToken) }) -> ListOrganizationsResponse
+newListOrganizationsResponse' :: ({ "OrganizationSummaries" :: Maybe (OrganizationSummaries), "NextToken" :: Maybe (NextToken) } -> { "OrganizationSummaries" :: Maybe (OrganizationSummaries), "NextToken" :: Maybe (NextToken) }) -> ListOrganizationsResponse
 ```
 
 Constructs ListOrganizationsResponse's fields from required parameters
@@ -1682,7 +1682,7 @@ Constructs ListOrganizationsResponse's fields from required parameters
 
 ``` purescript
 newtype ListResourceDelegatesRequest
-  = ListResourceDelegatesRequest { "OrganizationId" :: OrganizationId, "ResourceId" :: WorkMailIdentifier, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }
+  = ListResourceDelegatesRequest { "OrganizationId" :: OrganizationId, "ResourceId" :: WorkMailIdentifier, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }
 ```
 
 ##### Instances
@@ -1705,7 +1705,7 @@ Constructs ListResourceDelegatesRequest from required parameters
 #### `newListResourceDelegatesRequest'`
 
 ``` purescript
-newListResourceDelegatesRequest' :: OrganizationId -> WorkMailIdentifier -> ({ "OrganizationId" :: OrganizationId, "ResourceId" :: WorkMailIdentifier, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) } -> { "OrganizationId" :: OrganizationId, "ResourceId" :: WorkMailIdentifier, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }) -> ListResourceDelegatesRequest
+newListResourceDelegatesRequest' :: OrganizationId -> WorkMailIdentifier -> ({ "OrganizationId" :: OrganizationId, "ResourceId" :: WorkMailIdentifier, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) } -> { "OrganizationId" :: OrganizationId, "ResourceId" :: WorkMailIdentifier, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }) -> ListResourceDelegatesRequest
 ```
 
 Constructs ListResourceDelegatesRequest's fields from required parameters
@@ -1714,7 +1714,7 @@ Constructs ListResourceDelegatesRequest's fields from required parameters
 
 ``` purescript
 newtype ListResourceDelegatesResponse
-  = ListResourceDelegatesResponse { "Delegates" :: NullOrUndefined (ResourceDelegates), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListResourceDelegatesResponse { "Delegates" :: Maybe (ResourceDelegates), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -1737,7 +1737,7 @@ Constructs ListResourceDelegatesResponse from required parameters
 #### `newListResourceDelegatesResponse'`
 
 ``` purescript
-newListResourceDelegatesResponse' :: ({ "Delegates" :: NullOrUndefined (ResourceDelegates), "NextToken" :: NullOrUndefined (NextToken) } -> { "Delegates" :: NullOrUndefined (ResourceDelegates), "NextToken" :: NullOrUndefined (NextToken) }) -> ListResourceDelegatesResponse
+newListResourceDelegatesResponse' :: ({ "Delegates" :: Maybe (ResourceDelegates), "NextToken" :: Maybe (NextToken) } -> { "Delegates" :: Maybe (ResourceDelegates), "NextToken" :: Maybe (NextToken) }) -> ListResourceDelegatesResponse
 ```
 
 Constructs ListResourceDelegatesResponse's fields from required parameters
@@ -1746,7 +1746,7 @@ Constructs ListResourceDelegatesResponse's fields from required parameters
 
 ``` purescript
 newtype ListResourcesRequest
-  = ListResourcesRequest { "OrganizationId" :: OrganizationId, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }
+  = ListResourcesRequest { "OrganizationId" :: OrganizationId, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }
 ```
 
 ##### Instances
@@ -1769,7 +1769,7 @@ Constructs ListResourcesRequest from required parameters
 #### `newListResourcesRequest'`
 
 ``` purescript
-newListResourcesRequest' :: OrganizationId -> ({ "OrganizationId" :: OrganizationId, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) } -> { "OrganizationId" :: OrganizationId, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }) -> ListResourcesRequest
+newListResourcesRequest' :: OrganizationId -> ({ "OrganizationId" :: OrganizationId, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) } -> { "OrganizationId" :: OrganizationId, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }) -> ListResourcesRequest
 ```
 
 Constructs ListResourcesRequest's fields from required parameters
@@ -1778,7 +1778,7 @@ Constructs ListResourcesRequest's fields from required parameters
 
 ``` purescript
 newtype ListResourcesResponse
-  = ListResourcesResponse { "Resources" :: NullOrUndefined (Resources), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListResourcesResponse { "Resources" :: Maybe (Resources), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -1801,7 +1801,7 @@ Constructs ListResourcesResponse from required parameters
 #### `newListResourcesResponse'`
 
 ``` purescript
-newListResourcesResponse' :: ({ "Resources" :: NullOrUndefined (Resources), "NextToken" :: NullOrUndefined (NextToken) } -> { "Resources" :: NullOrUndefined (Resources), "NextToken" :: NullOrUndefined (NextToken) }) -> ListResourcesResponse
+newListResourcesResponse' :: ({ "Resources" :: Maybe (Resources), "NextToken" :: Maybe (NextToken) } -> { "Resources" :: Maybe (Resources), "NextToken" :: Maybe (NextToken) }) -> ListResourcesResponse
 ```
 
 Constructs ListResourcesResponse's fields from required parameters
@@ -1810,7 +1810,7 @@ Constructs ListResourcesResponse's fields from required parameters
 
 ``` purescript
 newtype ListUsersRequest
-  = ListUsersRequest { "OrganizationId" :: OrganizationId, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }
+  = ListUsersRequest { "OrganizationId" :: OrganizationId, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }
 ```
 
 ##### Instances
@@ -1833,7 +1833,7 @@ Constructs ListUsersRequest from required parameters
 #### `newListUsersRequest'`
 
 ``` purescript
-newListUsersRequest' :: OrganizationId -> ({ "OrganizationId" :: OrganizationId, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) } -> { "OrganizationId" :: OrganizationId, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }) -> ListUsersRequest
+newListUsersRequest' :: OrganizationId -> ({ "OrganizationId" :: OrganizationId, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) } -> { "OrganizationId" :: OrganizationId, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }) -> ListUsersRequest
 ```
 
 Constructs ListUsersRequest's fields from required parameters
@@ -1842,7 +1842,7 @@ Constructs ListUsersRequest's fields from required parameters
 
 ``` purescript
 newtype ListUsersResponse
-  = ListUsersResponse { "Users" :: NullOrUndefined (Users), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListUsersResponse { "Users" :: Maybe (Users), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -1865,7 +1865,7 @@ Constructs ListUsersResponse from required parameters
 #### `newListUsersResponse'`
 
 ``` purescript
-newListUsersResponse' :: ({ "Users" :: NullOrUndefined (Users), "NextToken" :: NullOrUndefined (NextToken) } -> { "Users" :: NullOrUndefined (Users), "NextToken" :: NullOrUndefined (NextToken) }) -> ListUsersResponse
+newListUsersResponse' :: ({ "Users" :: Maybe (Users), "NextToken" :: Maybe (NextToken) } -> { "Users" :: Maybe (Users), "NextToken" :: Maybe (NextToken) }) -> ListUsersResponse
 ```
 
 Constructs ListUsersResponse's fields from required parameters
@@ -1874,7 +1874,7 @@ Constructs ListUsersResponse's fields from required parameters
 
 ``` purescript
 newtype MailDomainNotFoundException
-  = MailDomainNotFoundException { "Message" :: NullOrUndefined (String) }
+  = MailDomainNotFoundException { "Message" :: Maybe (String) }
 ```
 
 <p>For an email or alias to be created in Amazon WorkMail, the included domain must be defined in the organization.</p>
@@ -1899,7 +1899,7 @@ Constructs MailDomainNotFoundException from required parameters
 #### `newMailDomainNotFoundException'`
 
 ``` purescript
-newMailDomainNotFoundException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> MailDomainNotFoundException
+newMailDomainNotFoundException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> MailDomainNotFoundException
 ```
 
 Constructs MailDomainNotFoundException's fields from required parameters
@@ -1908,7 +1908,7 @@ Constructs MailDomainNotFoundException's fields from required parameters
 
 ``` purescript
 newtype MailDomainStateException
-  = MailDomainStateException { "Message" :: NullOrUndefined (String) }
+  = MailDomainStateException { "Message" :: Maybe (String) }
 ```
 
 <p>After a domain has been added to the organization, it must be verified. The domain is not yet verified.</p>
@@ -1933,7 +1933,7 @@ Constructs MailDomainStateException from required parameters
 #### `newMailDomainStateException'`
 
 ``` purescript
-newMailDomainStateException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> MailDomainStateException
+newMailDomainStateException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> MailDomainStateException
 ```
 
 Constructs MailDomainStateException's fields from required parameters
@@ -1958,7 +1958,7 @@ Encode MaxResults
 
 ``` purescript
 newtype Member
-  = Member { "Id" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "Type" :: NullOrUndefined (MemberType), "State" :: NullOrUndefined (EntityState), "EnabledDate" :: NullOrUndefined (Timestamp), "DisabledDate" :: NullOrUndefined (Timestamp) }
+  = Member { "Id" :: Maybe (String), "Name" :: Maybe (String), "Type" :: Maybe (MemberType), "State" :: Maybe (EntityState), "EnabledDate" :: Maybe (Timestamp), "DisabledDate" :: Maybe (Timestamp) }
 ```
 
 <p>The representation of a group member (user or group).</p>
@@ -1983,7 +1983,7 @@ Constructs Member from required parameters
 #### `newMember'`
 
 ``` purescript
-newMember' :: ({ "Id" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "Type" :: NullOrUndefined (MemberType), "State" :: NullOrUndefined (EntityState), "EnabledDate" :: NullOrUndefined (Timestamp), "DisabledDate" :: NullOrUndefined (Timestamp) } -> { "Id" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "Type" :: NullOrUndefined (MemberType), "State" :: NullOrUndefined (EntityState), "EnabledDate" :: NullOrUndefined (Timestamp), "DisabledDate" :: NullOrUndefined (Timestamp) }) -> Member
+newMember' :: ({ "Id" :: Maybe (String), "Name" :: Maybe (String), "Type" :: Maybe (MemberType), "State" :: Maybe (EntityState), "EnabledDate" :: Maybe (Timestamp), "DisabledDate" :: Maybe (Timestamp) } -> { "Id" :: Maybe (String), "Name" :: Maybe (String), "Type" :: Maybe (MemberType), "State" :: Maybe (EntityState), "EnabledDate" :: Maybe (Timestamp), "DisabledDate" :: Maybe (Timestamp) }) -> Member
 ```
 
 Constructs Member's fields from required parameters
@@ -2024,7 +2024,7 @@ Encode Members
 
 ``` purescript
 newtype NameAvailabilityException
-  = NameAvailabilityException { "Message" :: NullOrUndefined (String) }
+  = NameAvailabilityException { "Message" :: Maybe (String) }
 ```
 
 <p>The entity (user, group, or user) name isn't unique in Amazon WorkMail.</p>
@@ -2049,7 +2049,7 @@ Constructs NameAvailabilityException from required parameters
 #### `newNameAvailabilityException'`
 
 ``` purescript
-newNameAvailabilityException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> NameAvailabilityException
+newNameAvailabilityException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> NameAvailabilityException
 ```
 
 Constructs NameAvailabilityException's fields from required parameters
@@ -2106,7 +2106,7 @@ Encode OrganizationName
 
 ``` purescript
 newtype OrganizationNotFoundException
-  = OrganizationNotFoundException { "Message" :: NullOrUndefined (String) }
+  = OrganizationNotFoundException { "Message" :: Maybe (String) }
 ```
 
 <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
@@ -2131,7 +2131,7 @@ Constructs OrganizationNotFoundException from required parameters
 #### `newOrganizationNotFoundException'`
 
 ``` purescript
-newOrganizationNotFoundException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> OrganizationNotFoundException
+newOrganizationNotFoundException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> OrganizationNotFoundException
 ```
 
 Constructs OrganizationNotFoundException's fields from required parameters
@@ -2140,7 +2140,7 @@ Constructs OrganizationNotFoundException's fields from required parameters
 
 ``` purescript
 newtype OrganizationStateException
-  = OrganizationStateException { "Message" :: NullOrUndefined (String) }
+  = OrganizationStateException { "Message" :: Maybe (String) }
 ```
 
 <p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its entities.</p>
@@ -2165,7 +2165,7 @@ Constructs OrganizationStateException from required parameters
 #### `newOrganizationStateException'`
 
 ``` purescript
-newOrganizationStateException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> OrganizationStateException
+newOrganizationStateException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> OrganizationStateException
 ```
 
 Constructs OrganizationStateException's fields from required parameters
@@ -2190,7 +2190,7 @@ Encode OrganizationSummaries
 
 ``` purescript
 newtype OrganizationSummary
-  = OrganizationSummary { "OrganizationId" :: NullOrUndefined (OrganizationId), "Alias" :: NullOrUndefined (OrganizationName), "ErrorMessage" :: NullOrUndefined (String), "State" :: NullOrUndefined (String) }
+  = OrganizationSummary { "OrganizationId" :: Maybe (OrganizationId), "Alias" :: Maybe (OrganizationName), "ErrorMessage" :: Maybe (String), "State" :: Maybe (String) }
 ```
 
 <p>The brief overview associated with an organization.</p>
@@ -2215,7 +2215,7 @@ Constructs OrganizationSummary from required parameters
 #### `newOrganizationSummary'`
 
 ``` purescript
-newOrganizationSummary' :: ({ "OrganizationId" :: NullOrUndefined (OrganizationId), "Alias" :: NullOrUndefined (OrganizationName), "ErrorMessage" :: NullOrUndefined (String), "State" :: NullOrUndefined (String) } -> { "OrganizationId" :: NullOrUndefined (OrganizationId), "Alias" :: NullOrUndefined (OrganizationName), "ErrorMessage" :: NullOrUndefined (String), "State" :: NullOrUndefined (String) }) -> OrganizationSummary
+newOrganizationSummary' :: ({ "OrganizationId" :: Maybe (OrganizationId), "Alias" :: Maybe (OrganizationName), "ErrorMessage" :: Maybe (String), "State" :: Maybe (String) } -> { "OrganizationId" :: Maybe (OrganizationId), "Alias" :: Maybe (OrganizationName), "ErrorMessage" :: Maybe (String), "State" :: Maybe (String) }) -> OrganizationSummary
 ```
 
 Constructs OrganizationSummary's fields from required parameters
@@ -2288,7 +2288,7 @@ Encode RegisterToWorkMailResponse
 
 ``` purescript
 newtype ReservedNameException
-  = ReservedNameException { "Message" :: NullOrUndefined (String) }
+  = ReservedNameException { "Message" :: Maybe (String) }
 ```
 
 <p>This entity name is not allowed in Amazon WorkMail.</p>
@@ -2313,7 +2313,7 @@ Constructs ReservedNameException from required parameters
 #### `newReservedNameException'`
 
 ``` purescript
-newReservedNameException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> ReservedNameException
+newReservedNameException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> ReservedNameException
 ```
 
 Constructs ReservedNameException's fields from required parameters
@@ -2370,7 +2370,7 @@ Encode ResetPasswordResponse
 
 ``` purescript
 newtype Resource
-  = Resource { "Id" :: NullOrUndefined (WorkMailIdentifier), "Email" :: NullOrUndefined (EmailAddress), "Name" :: NullOrUndefined (ResourceName), "Type" :: NullOrUndefined (ResourceType), "State" :: NullOrUndefined (EntityState), "EnabledDate" :: NullOrUndefined (Timestamp), "DisabledDate" :: NullOrUndefined (Timestamp) }
+  = Resource { "Id" :: Maybe (WorkMailIdentifier), "Email" :: Maybe (EmailAddress), "Name" :: Maybe (ResourceName), "Type" :: Maybe (ResourceType), "State" :: Maybe (EntityState), "EnabledDate" :: Maybe (Timestamp), "DisabledDate" :: Maybe (Timestamp) }
 ```
 
 <p>The overview for a resource containing relevant data regarding it.</p>
@@ -2395,7 +2395,7 @@ Constructs Resource from required parameters
 #### `newResource'`
 
 ``` purescript
-newResource' :: ({ "Id" :: NullOrUndefined (WorkMailIdentifier), "Email" :: NullOrUndefined (EmailAddress), "Name" :: NullOrUndefined (ResourceName), "Type" :: NullOrUndefined (ResourceType), "State" :: NullOrUndefined (EntityState), "EnabledDate" :: NullOrUndefined (Timestamp), "DisabledDate" :: NullOrUndefined (Timestamp) } -> { "Id" :: NullOrUndefined (WorkMailIdentifier), "Email" :: NullOrUndefined (EmailAddress), "Name" :: NullOrUndefined (ResourceName), "Type" :: NullOrUndefined (ResourceType), "State" :: NullOrUndefined (EntityState), "EnabledDate" :: NullOrUndefined (Timestamp), "DisabledDate" :: NullOrUndefined (Timestamp) }) -> Resource
+newResource' :: ({ "Id" :: Maybe (WorkMailIdentifier), "Email" :: Maybe (EmailAddress), "Name" :: Maybe (ResourceName), "Type" :: Maybe (ResourceType), "State" :: Maybe (EntityState), "EnabledDate" :: Maybe (Timestamp), "DisabledDate" :: Maybe (Timestamp) } -> { "Id" :: Maybe (WorkMailIdentifier), "Email" :: Maybe (EmailAddress), "Name" :: Maybe (ResourceName), "Type" :: Maybe (ResourceType), "State" :: Maybe (EntityState), "EnabledDate" :: Maybe (Timestamp), "DisabledDate" :: Maybe (Timestamp) }) -> Resource
 ```
 
 Constructs Resource's fields from required parameters
@@ -2484,7 +2484,7 @@ Encode Resources
 
 ``` purescript
 newtype UnsupportedOperationException
-  = UnsupportedOperationException { "Message" :: NullOrUndefined (String) }
+  = UnsupportedOperationException { "Message" :: Maybe (String) }
 ```
 
 <p>You can't perform a write operation against a read-only directory.</p>
@@ -2509,7 +2509,7 @@ Constructs UnsupportedOperationException from required parameters
 #### `newUnsupportedOperationException'`
 
 ``` purescript
-newUnsupportedOperationException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> UnsupportedOperationException
+newUnsupportedOperationException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> UnsupportedOperationException
 ```
 
 Constructs UnsupportedOperationException's fields from required parameters
@@ -2566,7 +2566,7 @@ Encode UpdatePrimaryEmailAddressResponse
 
 ``` purescript
 newtype UpdateResourceRequest
-  = UpdateResourceRequest { "OrganizationId" :: OrganizationId, "ResourceId" :: ResourceId, "Name" :: NullOrUndefined (ResourceName), "BookingOptions" :: NullOrUndefined (BookingOptions) }
+  = UpdateResourceRequest { "OrganizationId" :: OrganizationId, "ResourceId" :: ResourceId, "Name" :: Maybe (ResourceName), "BookingOptions" :: Maybe (BookingOptions) }
 ```
 
 ##### Instances
@@ -2589,7 +2589,7 @@ Constructs UpdateResourceRequest from required parameters
 #### `newUpdateResourceRequest'`
 
 ``` purescript
-newUpdateResourceRequest' :: OrganizationId -> ResourceId -> ({ "OrganizationId" :: OrganizationId, "ResourceId" :: ResourceId, "Name" :: NullOrUndefined (ResourceName), "BookingOptions" :: NullOrUndefined (BookingOptions) } -> { "OrganizationId" :: OrganizationId, "ResourceId" :: ResourceId, "Name" :: NullOrUndefined (ResourceName), "BookingOptions" :: NullOrUndefined (BookingOptions) }) -> UpdateResourceRequest
+newUpdateResourceRequest' :: OrganizationId -> ResourceId -> ({ "OrganizationId" :: OrganizationId, "ResourceId" :: ResourceId, "Name" :: Maybe (ResourceName), "BookingOptions" :: Maybe (BookingOptions) } -> { "OrganizationId" :: OrganizationId, "ResourceId" :: ResourceId, "Name" :: Maybe (ResourceName), "BookingOptions" :: Maybe (BookingOptions) }) -> UpdateResourceRequest
 ```
 
 Constructs UpdateResourceRequest's fields from required parameters
@@ -2614,7 +2614,7 @@ Encode UpdateResourceResponse
 
 ``` purescript
 newtype User
-  = User { "Id" :: NullOrUndefined (WorkMailIdentifier), "Email" :: NullOrUndefined (EmailAddress), "Name" :: NullOrUndefined (UserName), "DisplayName" :: NullOrUndefined (String), "State" :: NullOrUndefined (EntityState), "UserRole" :: NullOrUndefined (UserRole), "EnabledDate" :: NullOrUndefined (Timestamp), "DisabledDate" :: NullOrUndefined (Timestamp) }
+  = User { "Id" :: Maybe (WorkMailIdentifier), "Email" :: Maybe (EmailAddress), "Name" :: Maybe (UserName), "DisplayName" :: Maybe (String), "State" :: Maybe (EntityState), "UserRole" :: Maybe (UserRole), "EnabledDate" :: Maybe (Timestamp), "DisabledDate" :: Maybe (Timestamp) }
 ```
 
 <p>The representation of an Amazon WorkMail user.</p>
@@ -2639,7 +2639,7 @@ Constructs User from required parameters
 #### `newUser'`
 
 ``` purescript
-newUser' :: ({ "Id" :: NullOrUndefined (WorkMailIdentifier), "Email" :: NullOrUndefined (EmailAddress), "Name" :: NullOrUndefined (UserName), "DisplayName" :: NullOrUndefined (String), "State" :: NullOrUndefined (EntityState), "UserRole" :: NullOrUndefined (UserRole), "EnabledDate" :: NullOrUndefined (Timestamp), "DisabledDate" :: NullOrUndefined (Timestamp) } -> { "Id" :: NullOrUndefined (WorkMailIdentifier), "Email" :: NullOrUndefined (EmailAddress), "Name" :: NullOrUndefined (UserName), "DisplayName" :: NullOrUndefined (String), "State" :: NullOrUndefined (EntityState), "UserRole" :: NullOrUndefined (UserRole), "EnabledDate" :: NullOrUndefined (Timestamp), "DisabledDate" :: NullOrUndefined (Timestamp) }) -> User
+newUser' :: ({ "Id" :: Maybe (WorkMailIdentifier), "Email" :: Maybe (EmailAddress), "Name" :: Maybe (UserName), "DisplayName" :: Maybe (String), "State" :: Maybe (EntityState), "UserRole" :: Maybe (UserRole), "EnabledDate" :: Maybe (Timestamp), "DisabledDate" :: Maybe (Timestamp) } -> { "Id" :: Maybe (WorkMailIdentifier), "Email" :: Maybe (EmailAddress), "Name" :: Maybe (UserName), "DisplayName" :: Maybe (String), "State" :: Maybe (EntityState), "UserRole" :: Maybe (UserRole), "EnabledDate" :: Maybe (Timestamp), "DisabledDate" :: Maybe (Timestamp) }) -> User
 ```
 
 Constructs User's fields from required parameters

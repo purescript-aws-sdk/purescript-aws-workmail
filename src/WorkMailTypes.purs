@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -91,9 +90,9 @@ instance encodeAssociateMemberToGroupResponse :: Encode AssociateMemberToGroupRe
 
 -- | <p>At least one delegate must be associated to the resource to disable automatic replies from the resource.</p>
 newtype BookingOptions = BookingOptions 
-  { "AutoAcceptRequests" :: NullOrUndefined (Boolean)
-  , "AutoDeclineRecurringRequests" :: NullOrUndefined (Boolean)
-  , "AutoDeclineConflictingRequests" :: NullOrUndefined (Boolean)
+  { "AutoAcceptRequests" :: Maybe (Boolean)
+  , "AutoDeclineRecurringRequests" :: Maybe (Boolean)
+  , "AutoDeclineConflictingRequests" :: Maybe (Boolean)
   }
 derive instance newtypeBookingOptions :: Newtype BookingOptions _
 derive instance repGenericBookingOptions :: Generic BookingOptions _
@@ -103,12 +102,12 @@ instance encodeBookingOptions :: Encode BookingOptions where encode = genericEnc
 
 -- | Constructs BookingOptions from required parameters
 newBookingOptions :: BookingOptions
-newBookingOptions  = BookingOptions { "AutoAcceptRequests": (NullOrUndefined Nothing), "AutoDeclineConflictingRequests": (NullOrUndefined Nothing), "AutoDeclineRecurringRequests": (NullOrUndefined Nothing) }
+newBookingOptions  = BookingOptions { "AutoAcceptRequests": Nothing, "AutoDeclineConflictingRequests": Nothing, "AutoDeclineRecurringRequests": Nothing }
 
 -- | Constructs BookingOptions's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBookingOptions' :: ( { "AutoAcceptRequests" :: NullOrUndefined (Boolean) , "AutoDeclineRecurringRequests" :: NullOrUndefined (Boolean) , "AutoDeclineConflictingRequests" :: NullOrUndefined (Boolean) } -> {"AutoAcceptRequests" :: NullOrUndefined (Boolean) , "AutoDeclineRecurringRequests" :: NullOrUndefined (Boolean) , "AutoDeclineConflictingRequests" :: NullOrUndefined (Boolean) } ) -> BookingOptions
-newBookingOptions'  customize = (BookingOptions <<< customize) { "AutoAcceptRequests": (NullOrUndefined Nothing), "AutoDeclineConflictingRequests": (NullOrUndefined Nothing), "AutoDeclineRecurringRequests": (NullOrUndefined Nothing) }
+newBookingOptions' :: ( { "AutoAcceptRequests" :: Maybe (Boolean) , "AutoDeclineRecurringRequests" :: Maybe (Boolean) , "AutoDeclineConflictingRequests" :: Maybe (Boolean) } -> {"AutoAcceptRequests" :: Maybe (Boolean) , "AutoDeclineRecurringRequests" :: Maybe (Boolean) , "AutoDeclineConflictingRequests" :: Maybe (Boolean) } ) -> BookingOptions
+newBookingOptions'  customize = (BookingOptions <<< customize) { "AutoAcceptRequests": Nothing, "AutoDeclineConflictingRequests": Nothing, "AutoDeclineRecurringRequests": Nothing }
 
 
 
@@ -165,7 +164,7 @@ newCreateGroupRequest' _Name _OrganizationId customize = (CreateGroupRequest <<<
 
 
 newtype CreateGroupResponse = CreateGroupResponse 
-  { "GroupId" :: NullOrUndefined (WorkMailIdentifier)
+  { "GroupId" :: Maybe (WorkMailIdentifier)
   }
 derive instance newtypeCreateGroupResponse :: Newtype CreateGroupResponse _
 derive instance repGenericCreateGroupResponse :: Generic CreateGroupResponse _
@@ -175,12 +174,12 @@ instance encodeCreateGroupResponse :: Encode CreateGroupResponse where encode = 
 
 -- | Constructs CreateGroupResponse from required parameters
 newCreateGroupResponse :: CreateGroupResponse
-newCreateGroupResponse  = CreateGroupResponse { "GroupId": (NullOrUndefined Nothing) }
+newCreateGroupResponse  = CreateGroupResponse { "GroupId": Nothing }
 
 -- | Constructs CreateGroupResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateGroupResponse' :: ( { "GroupId" :: NullOrUndefined (WorkMailIdentifier) } -> {"GroupId" :: NullOrUndefined (WorkMailIdentifier) } ) -> CreateGroupResponse
-newCreateGroupResponse'  customize = (CreateGroupResponse <<< customize) { "GroupId": (NullOrUndefined Nothing) }
+newCreateGroupResponse' :: ( { "GroupId" :: Maybe (WorkMailIdentifier) } -> {"GroupId" :: Maybe (WorkMailIdentifier) } ) -> CreateGroupResponse
+newCreateGroupResponse'  customize = (CreateGroupResponse <<< customize) { "GroupId": Nothing }
 
 
 
@@ -207,7 +206,7 @@ newCreateResourceRequest' _Name _OrganizationId _Type customize = (CreateResourc
 
 
 newtype CreateResourceResponse = CreateResourceResponse 
-  { "ResourceId" :: NullOrUndefined (ResourceId)
+  { "ResourceId" :: Maybe (ResourceId)
   }
 derive instance newtypeCreateResourceResponse :: Newtype CreateResourceResponse _
 derive instance repGenericCreateResourceResponse :: Generic CreateResourceResponse _
@@ -217,12 +216,12 @@ instance encodeCreateResourceResponse :: Encode CreateResourceResponse where enc
 
 -- | Constructs CreateResourceResponse from required parameters
 newCreateResourceResponse :: CreateResourceResponse
-newCreateResourceResponse  = CreateResourceResponse { "ResourceId": (NullOrUndefined Nothing) }
+newCreateResourceResponse  = CreateResourceResponse { "ResourceId": Nothing }
 
 -- | Constructs CreateResourceResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateResourceResponse' :: ( { "ResourceId" :: NullOrUndefined (ResourceId) } -> {"ResourceId" :: NullOrUndefined (ResourceId) } ) -> CreateResourceResponse
-newCreateResourceResponse'  customize = (CreateResourceResponse <<< customize) { "ResourceId": (NullOrUndefined Nothing) }
+newCreateResourceResponse' :: ( { "ResourceId" :: Maybe (ResourceId) } -> {"ResourceId" :: Maybe (ResourceId) } ) -> CreateResourceResponse
+newCreateResourceResponse'  customize = (CreateResourceResponse <<< customize) { "ResourceId": Nothing }
 
 
 
@@ -250,7 +249,7 @@ newCreateUserRequest' _DisplayName _Name _OrganizationId _Password customize = (
 
 
 newtype CreateUserResponse = CreateUserResponse 
-  { "UserId" :: NullOrUndefined (WorkMailIdentifier)
+  { "UserId" :: Maybe (WorkMailIdentifier)
   }
 derive instance newtypeCreateUserResponse :: Newtype CreateUserResponse _
 derive instance repGenericCreateUserResponse :: Generic CreateUserResponse _
@@ -260,12 +259,12 @@ instance encodeCreateUserResponse :: Encode CreateUserResponse where encode = ge
 
 -- | Constructs CreateUserResponse from required parameters
 newCreateUserResponse :: CreateUserResponse
-newCreateUserResponse  = CreateUserResponse { "UserId": (NullOrUndefined Nothing) }
+newCreateUserResponse  = CreateUserResponse { "UserId": Nothing }
 
 -- | Constructs CreateUserResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateUserResponse' :: ( { "UserId" :: NullOrUndefined (WorkMailIdentifier) } -> {"UserId" :: NullOrUndefined (WorkMailIdentifier) } ) -> CreateUserResponse
-newCreateUserResponse'  customize = (CreateUserResponse <<< customize) { "UserId": (NullOrUndefined Nothing) }
+newCreateUserResponse' :: ( { "UserId" :: Maybe (WorkMailIdentifier) } -> {"UserId" :: Maybe (WorkMailIdentifier) } ) -> CreateUserResponse
+newCreateUserResponse'  customize = (CreateUserResponse <<< customize) { "UserId": Nothing }
 
 
 
@@ -464,12 +463,12 @@ newDescribeGroupRequest' _GroupId _OrganizationId customize = (DescribeGroupRequ
 
 
 newtype DescribeGroupResponse = DescribeGroupResponse 
-  { "GroupId" :: NullOrUndefined (WorkMailIdentifier)
-  , "Name" :: NullOrUndefined (GroupName)
-  , "Email" :: NullOrUndefined (EmailAddress)
-  , "State" :: NullOrUndefined (EntityState)
-  , "EnabledDate" :: NullOrUndefined (Types.Timestamp)
-  , "DisabledDate" :: NullOrUndefined (Types.Timestamp)
+  { "GroupId" :: Maybe (WorkMailIdentifier)
+  , "Name" :: Maybe (GroupName)
+  , "Email" :: Maybe (EmailAddress)
+  , "State" :: Maybe (EntityState)
+  , "EnabledDate" :: Maybe (Types.Timestamp)
+  , "DisabledDate" :: Maybe (Types.Timestamp)
   }
 derive instance newtypeDescribeGroupResponse :: Newtype DescribeGroupResponse _
 derive instance repGenericDescribeGroupResponse :: Generic DescribeGroupResponse _
@@ -479,12 +478,12 @@ instance encodeDescribeGroupResponse :: Encode DescribeGroupResponse where encod
 
 -- | Constructs DescribeGroupResponse from required parameters
 newDescribeGroupResponse :: DescribeGroupResponse
-newDescribeGroupResponse  = DescribeGroupResponse { "DisabledDate": (NullOrUndefined Nothing), "Email": (NullOrUndefined Nothing), "EnabledDate": (NullOrUndefined Nothing), "GroupId": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newDescribeGroupResponse  = DescribeGroupResponse { "DisabledDate": Nothing, "Email": Nothing, "EnabledDate": Nothing, "GroupId": Nothing, "Name": Nothing, "State": Nothing }
 
 -- | Constructs DescribeGroupResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeGroupResponse' :: ( { "GroupId" :: NullOrUndefined (WorkMailIdentifier) , "Name" :: NullOrUndefined (GroupName) , "Email" :: NullOrUndefined (EmailAddress) , "State" :: NullOrUndefined (EntityState) , "EnabledDate" :: NullOrUndefined (Types.Timestamp) , "DisabledDate" :: NullOrUndefined (Types.Timestamp) } -> {"GroupId" :: NullOrUndefined (WorkMailIdentifier) , "Name" :: NullOrUndefined (GroupName) , "Email" :: NullOrUndefined (EmailAddress) , "State" :: NullOrUndefined (EntityState) , "EnabledDate" :: NullOrUndefined (Types.Timestamp) , "DisabledDate" :: NullOrUndefined (Types.Timestamp) } ) -> DescribeGroupResponse
-newDescribeGroupResponse'  customize = (DescribeGroupResponse <<< customize) { "DisabledDate": (NullOrUndefined Nothing), "Email": (NullOrUndefined Nothing), "EnabledDate": (NullOrUndefined Nothing), "GroupId": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newDescribeGroupResponse' :: ( { "GroupId" :: Maybe (WorkMailIdentifier) , "Name" :: Maybe (GroupName) , "Email" :: Maybe (EmailAddress) , "State" :: Maybe (EntityState) , "EnabledDate" :: Maybe (Types.Timestamp) , "DisabledDate" :: Maybe (Types.Timestamp) } -> {"GroupId" :: Maybe (WorkMailIdentifier) , "Name" :: Maybe (GroupName) , "Email" :: Maybe (EmailAddress) , "State" :: Maybe (EntityState) , "EnabledDate" :: Maybe (Types.Timestamp) , "DisabledDate" :: Maybe (Types.Timestamp) } ) -> DescribeGroupResponse
+newDescribeGroupResponse'  customize = (DescribeGroupResponse <<< customize) { "DisabledDate": Nothing, "Email": Nothing, "EnabledDate": Nothing, "GroupId": Nothing, "Name": Nothing, "State": Nothing }
 
 
 
@@ -509,14 +508,14 @@ newDescribeOrganizationRequest' _OrganizationId customize = (DescribeOrganizatio
 
 
 newtype DescribeOrganizationResponse = DescribeOrganizationResponse 
-  { "OrganizationId" :: NullOrUndefined (OrganizationId)
-  , "Alias" :: NullOrUndefined (OrganizationName)
-  , "State" :: NullOrUndefined (String)
-  , "DirectoryId" :: NullOrUndefined (String)
-  , "DirectoryType" :: NullOrUndefined (String)
-  , "DefaultMailDomain" :: NullOrUndefined (String)
-  , "CompletedDate" :: NullOrUndefined (Types.Timestamp)
-  , "ErrorMessage" :: NullOrUndefined (String)
+  { "OrganizationId" :: Maybe (OrganizationId)
+  , "Alias" :: Maybe (OrganizationName)
+  , "State" :: Maybe (String)
+  , "DirectoryId" :: Maybe (String)
+  , "DirectoryType" :: Maybe (String)
+  , "DefaultMailDomain" :: Maybe (String)
+  , "CompletedDate" :: Maybe (Types.Timestamp)
+  , "ErrorMessage" :: Maybe (String)
   }
 derive instance newtypeDescribeOrganizationResponse :: Newtype DescribeOrganizationResponse _
 derive instance repGenericDescribeOrganizationResponse :: Generic DescribeOrganizationResponse _
@@ -526,12 +525,12 @@ instance encodeDescribeOrganizationResponse :: Encode DescribeOrganizationRespon
 
 -- | Constructs DescribeOrganizationResponse from required parameters
 newDescribeOrganizationResponse :: DescribeOrganizationResponse
-newDescribeOrganizationResponse  = DescribeOrganizationResponse { "Alias": (NullOrUndefined Nothing), "CompletedDate": (NullOrUndefined Nothing), "DefaultMailDomain": (NullOrUndefined Nothing), "DirectoryId": (NullOrUndefined Nothing), "DirectoryType": (NullOrUndefined Nothing), "ErrorMessage": (NullOrUndefined Nothing), "OrganizationId": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newDescribeOrganizationResponse  = DescribeOrganizationResponse { "Alias": Nothing, "CompletedDate": Nothing, "DefaultMailDomain": Nothing, "DirectoryId": Nothing, "DirectoryType": Nothing, "ErrorMessage": Nothing, "OrganizationId": Nothing, "State": Nothing }
 
 -- | Constructs DescribeOrganizationResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeOrganizationResponse' :: ( { "OrganizationId" :: NullOrUndefined (OrganizationId) , "Alias" :: NullOrUndefined (OrganizationName) , "State" :: NullOrUndefined (String) , "DirectoryId" :: NullOrUndefined (String) , "DirectoryType" :: NullOrUndefined (String) , "DefaultMailDomain" :: NullOrUndefined (String) , "CompletedDate" :: NullOrUndefined (Types.Timestamp) , "ErrorMessage" :: NullOrUndefined (String) } -> {"OrganizationId" :: NullOrUndefined (OrganizationId) , "Alias" :: NullOrUndefined (OrganizationName) , "State" :: NullOrUndefined (String) , "DirectoryId" :: NullOrUndefined (String) , "DirectoryType" :: NullOrUndefined (String) , "DefaultMailDomain" :: NullOrUndefined (String) , "CompletedDate" :: NullOrUndefined (Types.Timestamp) , "ErrorMessage" :: NullOrUndefined (String) } ) -> DescribeOrganizationResponse
-newDescribeOrganizationResponse'  customize = (DescribeOrganizationResponse <<< customize) { "Alias": (NullOrUndefined Nothing), "CompletedDate": (NullOrUndefined Nothing), "DefaultMailDomain": (NullOrUndefined Nothing), "DirectoryId": (NullOrUndefined Nothing), "DirectoryType": (NullOrUndefined Nothing), "ErrorMessage": (NullOrUndefined Nothing), "OrganizationId": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newDescribeOrganizationResponse' :: ( { "OrganizationId" :: Maybe (OrganizationId) , "Alias" :: Maybe (OrganizationName) , "State" :: Maybe (String) , "DirectoryId" :: Maybe (String) , "DirectoryType" :: Maybe (String) , "DefaultMailDomain" :: Maybe (String) , "CompletedDate" :: Maybe (Types.Timestamp) , "ErrorMessage" :: Maybe (String) } -> {"OrganizationId" :: Maybe (OrganizationId) , "Alias" :: Maybe (OrganizationName) , "State" :: Maybe (String) , "DirectoryId" :: Maybe (String) , "DirectoryType" :: Maybe (String) , "DefaultMailDomain" :: Maybe (String) , "CompletedDate" :: Maybe (Types.Timestamp) , "ErrorMessage" :: Maybe (String) } ) -> DescribeOrganizationResponse
+newDescribeOrganizationResponse'  customize = (DescribeOrganizationResponse <<< customize) { "Alias": Nothing, "CompletedDate": Nothing, "DefaultMailDomain": Nothing, "DirectoryId": Nothing, "DirectoryType": Nothing, "ErrorMessage": Nothing, "OrganizationId": Nothing, "State": Nothing }
 
 
 
@@ -557,14 +556,14 @@ newDescribeResourceRequest' _OrganizationId _ResourceId customize = (DescribeRes
 
 
 newtype DescribeResourceResponse = DescribeResourceResponse 
-  { "ResourceId" :: NullOrUndefined (ResourceId)
-  , "Email" :: NullOrUndefined (EmailAddress)
-  , "Name" :: NullOrUndefined (ResourceName)
-  , "Type" :: NullOrUndefined (ResourceType)
-  , "BookingOptions" :: NullOrUndefined (BookingOptions)
-  , "State" :: NullOrUndefined (EntityState)
-  , "EnabledDate" :: NullOrUndefined (Types.Timestamp)
-  , "DisabledDate" :: NullOrUndefined (Types.Timestamp)
+  { "ResourceId" :: Maybe (ResourceId)
+  , "Email" :: Maybe (EmailAddress)
+  , "Name" :: Maybe (ResourceName)
+  , "Type" :: Maybe (ResourceType)
+  , "BookingOptions" :: Maybe (BookingOptions)
+  , "State" :: Maybe (EntityState)
+  , "EnabledDate" :: Maybe (Types.Timestamp)
+  , "DisabledDate" :: Maybe (Types.Timestamp)
   }
 derive instance newtypeDescribeResourceResponse :: Newtype DescribeResourceResponse _
 derive instance repGenericDescribeResourceResponse :: Generic DescribeResourceResponse _
@@ -574,12 +573,12 @@ instance encodeDescribeResourceResponse :: Encode DescribeResourceResponse where
 
 -- | Constructs DescribeResourceResponse from required parameters
 newDescribeResourceResponse :: DescribeResourceResponse
-newDescribeResourceResponse  = DescribeResourceResponse { "BookingOptions": (NullOrUndefined Nothing), "DisabledDate": (NullOrUndefined Nothing), "Email": (NullOrUndefined Nothing), "EnabledDate": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "ResourceId": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newDescribeResourceResponse  = DescribeResourceResponse { "BookingOptions": Nothing, "DisabledDate": Nothing, "Email": Nothing, "EnabledDate": Nothing, "Name": Nothing, "ResourceId": Nothing, "State": Nothing, "Type": Nothing }
 
 -- | Constructs DescribeResourceResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeResourceResponse' :: ( { "ResourceId" :: NullOrUndefined (ResourceId) , "Email" :: NullOrUndefined (EmailAddress) , "Name" :: NullOrUndefined (ResourceName) , "Type" :: NullOrUndefined (ResourceType) , "BookingOptions" :: NullOrUndefined (BookingOptions) , "State" :: NullOrUndefined (EntityState) , "EnabledDate" :: NullOrUndefined (Types.Timestamp) , "DisabledDate" :: NullOrUndefined (Types.Timestamp) } -> {"ResourceId" :: NullOrUndefined (ResourceId) , "Email" :: NullOrUndefined (EmailAddress) , "Name" :: NullOrUndefined (ResourceName) , "Type" :: NullOrUndefined (ResourceType) , "BookingOptions" :: NullOrUndefined (BookingOptions) , "State" :: NullOrUndefined (EntityState) , "EnabledDate" :: NullOrUndefined (Types.Timestamp) , "DisabledDate" :: NullOrUndefined (Types.Timestamp) } ) -> DescribeResourceResponse
-newDescribeResourceResponse'  customize = (DescribeResourceResponse <<< customize) { "BookingOptions": (NullOrUndefined Nothing), "DisabledDate": (NullOrUndefined Nothing), "Email": (NullOrUndefined Nothing), "EnabledDate": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "ResourceId": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newDescribeResourceResponse' :: ( { "ResourceId" :: Maybe (ResourceId) , "Email" :: Maybe (EmailAddress) , "Name" :: Maybe (ResourceName) , "Type" :: Maybe (ResourceType) , "BookingOptions" :: Maybe (BookingOptions) , "State" :: Maybe (EntityState) , "EnabledDate" :: Maybe (Types.Timestamp) , "DisabledDate" :: Maybe (Types.Timestamp) } -> {"ResourceId" :: Maybe (ResourceId) , "Email" :: Maybe (EmailAddress) , "Name" :: Maybe (ResourceName) , "Type" :: Maybe (ResourceType) , "BookingOptions" :: Maybe (BookingOptions) , "State" :: Maybe (EntityState) , "EnabledDate" :: Maybe (Types.Timestamp) , "DisabledDate" :: Maybe (Types.Timestamp) } ) -> DescribeResourceResponse
+newDescribeResourceResponse'  customize = (DescribeResourceResponse <<< customize) { "BookingOptions": Nothing, "DisabledDate": Nothing, "Email": Nothing, "EnabledDate": Nothing, "Name": Nothing, "ResourceId": Nothing, "State": Nothing, "Type": Nothing }
 
 
 
@@ -605,14 +604,14 @@ newDescribeUserRequest' _OrganizationId _UserId customize = (DescribeUserRequest
 
 
 newtype DescribeUserResponse = DescribeUserResponse 
-  { "UserId" :: NullOrUndefined (WorkMailIdentifier)
-  , "Name" :: NullOrUndefined (UserName)
-  , "Email" :: NullOrUndefined (EmailAddress)
-  , "DisplayName" :: NullOrUndefined (String)
-  , "State" :: NullOrUndefined (EntityState)
-  , "UserRole" :: NullOrUndefined (UserRole)
-  , "EnabledDate" :: NullOrUndefined (Types.Timestamp)
-  , "DisabledDate" :: NullOrUndefined (Types.Timestamp)
+  { "UserId" :: Maybe (WorkMailIdentifier)
+  , "Name" :: Maybe (UserName)
+  , "Email" :: Maybe (EmailAddress)
+  , "DisplayName" :: Maybe (String)
+  , "State" :: Maybe (EntityState)
+  , "UserRole" :: Maybe (UserRole)
+  , "EnabledDate" :: Maybe (Types.Timestamp)
+  , "DisabledDate" :: Maybe (Types.Timestamp)
   }
 derive instance newtypeDescribeUserResponse :: Newtype DescribeUserResponse _
 derive instance repGenericDescribeUserResponse :: Generic DescribeUserResponse _
@@ -622,18 +621,18 @@ instance encodeDescribeUserResponse :: Encode DescribeUserResponse where encode 
 
 -- | Constructs DescribeUserResponse from required parameters
 newDescribeUserResponse :: DescribeUserResponse
-newDescribeUserResponse  = DescribeUserResponse { "DisabledDate": (NullOrUndefined Nothing), "DisplayName": (NullOrUndefined Nothing), "Email": (NullOrUndefined Nothing), "EnabledDate": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "UserId": (NullOrUndefined Nothing), "UserRole": (NullOrUndefined Nothing) }
+newDescribeUserResponse  = DescribeUserResponse { "DisabledDate": Nothing, "DisplayName": Nothing, "Email": Nothing, "EnabledDate": Nothing, "Name": Nothing, "State": Nothing, "UserId": Nothing, "UserRole": Nothing }
 
 -- | Constructs DescribeUserResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeUserResponse' :: ( { "UserId" :: NullOrUndefined (WorkMailIdentifier) , "Name" :: NullOrUndefined (UserName) , "Email" :: NullOrUndefined (EmailAddress) , "DisplayName" :: NullOrUndefined (String) , "State" :: NullOrUndefined (EntityState) , "UserRole" :: NullOrUndefined (UserRole) , "EnabledDate" :: NullOrUndefined (Types.Timestamp) , "DisabledDate" :: NullOrUndefined (Types.Timestamp) } -> {"UserId" :: NullOrUndefined (WorkMailIdentifier) , "Name" :: NullOrUndefined (UserName) , "Email" :: NullOrUndefined (EmailAddress) , "DisplayName" :: NullOrUndefined (String) , "State" :: NullOrUndefined (EntityState) , "UserRole" :: NullOrUndefined (UserRole) , "EnabledDate" :: NullOrUndefined (Types.Timestamp) , "DisabledDate" :: NullOrUndefined (Types.Timestamp) } ) -> DescribeUserResponse
-newDescribeUserResponse'  customize = (DescribeUserResponse <<< customize) { "DisabledDate": (NullOrUndefined Nothing), "DisplayName": (NullOrUndefined Nothing), "Email": (NullOrUndefined Nothing), "EnabledDate": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "UserId": (NullOrUndefined Nothing), "UserRole": (NullOrUndefined Nothing) }
+newDescribeUserResponse' :: ( { "UserId" :: Maybe (WorkMailIdentifier) , "Name" :: Maybe (UserName) , "Email" :: Maybe (EmailAddress) , "DisplayName" :: Maybe (String) , "State" :: Maybe (EntityState) , "UserRole" :: Maybe (UserRole) , "EnabledDate" :: Maybe (Types.Timestamp) , "DisabledDate" :: Maybe (Types.Timestamp) } -> {"UserId" :: Maybe (WorkMailIdentifier) , "Name" :: Maybe (UserName) , "Email" :: Maybe (EmailAddress) , "DisplayName" :: Maybe (String) , "State" :: Maybe (EntityState) , "UserRole" :: Maybe (UserRole) , "EnabledDate" :: Maybe (Types.Timestamp) , "DisabledDate" :: Maybe (Types.Timestamp) } ) -> DescribeUserResponse
+newDescribeUserResponse'  customize = (DescribeUserResponse <<< customize) { "DisabledDate": Nothing, "DisplayName": Nothing, "Email": Nothing, "EnabledDate": Nothing, "Name": Nothing, "State": Nothing, "UserId": Nothing, "UserRole": Nothing }
 
 
 
 -- | <p>The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail service.</p>
 newtype DirectoryServiceAuthenticationFailedException = DirectoryServiceAuthenticationFailedException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeDirectoryServiceAuthenticationFailedException :: Newtype DirectoryServiceAuthenticationFailedException _
 derive instance repGenericDirectoryServiceAuthenticationFailedException :: Generic DirectoryServiceAuthenticationFailedException _
@@ -643,18 +642,18 @@ instance encodeDirectoryServiceAuthenticationFailedException :: Encode Directory
 
 -- | Constructs DirectoryServiceAuthenticationFailedException from required parameters
 newDirectoryServiceAuthenticationFailedException :: DirectoryServiceAuthenticationFailedException
-newDirectoryServiceAuthenticationFailedException  = DirectoryServiceAuthenticationFailedException { "Message": (NullOrUndefined Nothing) }
+newDirectoryServiceAuthenticationFailedException  = DirectoryServiceAuthenticationFailedException { "Message": Nothing }
 
 -- | Constructs DirectoryServiceAuthenticationFailedException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDirectoryServiceAuthenticationFailedException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> DirectoryServiceAuthenticationFailedException
-newDirectoryServiceAuthenticationFailedException'  customize = (DirectoryServiceAuthenticationFailedException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newDirectoryServiceAuthenticationFailedException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> DirectoryServiceAuthenticationFailedException
+newDirectoryServiceAuthenticationFailedException'  customize = (DirectoryServiceAuthenticationFailedException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The directory that you are trying to perform operations on isn't available.</p>
 newtype DirectoryUnavailableException = DirectoryUnavailableException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeDirectoryUnavailableException :: Newtype DirectoryUnavailableException _
 derive instance repGenericDirectoryUnavailableException :: Generic DirectoryUnavailableException _
@@ -664,12 +663,12 @@ instance encodeDirectoryUnavailableException :: Encode DirectoryUnavailableExcep
 
 -- | Constructs DirectoryUnavailableException from required parameters
 newDirectoryUnavailableException :: DirectoryUnavailableException
-newDirectoryUnavailableException  = DirectoryUnavailableException { "Message": (NullOrUndefined Nothing) }
+newDirectoryUnavailableException  = DirectoryUnavailableException { "Message": Nothing }
 
 -- | Constructs DirectoryUnavailableException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDirectoryUnavailableException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> DirectoryUnavailableException
-newDirectoryUnavailableException'  customize = (DirectoryUnavailableException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newDirectoryUnavailableException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> DirectoryUnavailableException
+newDirectoryUnavailableException'  customize = (DirectoryUnavailableException <<< customize) { "Message": Nothing }
 
 
 
@@ -746,7 +745,7 @@ instance encodeEmailAddress :: Encode EmailAddress where encode = genericEncode 
 
 -- | <p>The email address that you're trying to assign is already created for a different user, group, or resource.</p>
 newtype EmailAddressInUseException = EmailAddressInUseException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeEmailAddressInUseException :: Newtype EmailAddressInUseException _
 derive instance repGenericEmailAddressInUseException :: Generic EmailAddressInUseException _
@@ -756,18 +755,18 @@ instance encodeEmailAddressInUseException :: Encode EmailAddressInUseException w
 
 -- | Constructs EmailAddressInUseException from required parameters
 newEmailAddressInUseException :: EmailAddressInUseException
-newEmailAddressInUseException  = EmailAddressInUseException { "Message": (NullOrUndefined Nothing) }
+newEmailAddressInUseException  = EmailAddressInUseException { "Message": Nothing }
 
 -- | Constructs EmailAddressInUseException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEmailAddressInUseException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> EmailAddressInUseException
-newEmailAddressInUseException'  customize = (EmailAddressInUseException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newEmailAddressInUseException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> EmailAddressInUseException
+newEmailAddressInUseException'  customize = (EmailAddressInUseException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The user, group, or resource that you're trying to register is already registered.</p>
 newtype EntityAlreadyRegisteredException = EntityAlreadyRegisteredException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeEntityAlreadyRegisteredException :: Newtype EntityAlreadyRegisteredException _
 derive instance repGenericEntityAlreadyRegisteredException :: Generic EntityAlreadyRegisteredException _
@@ -777,18 +776,18 @@ instance encodeEntityAlreadyRegisteredException :: Encode EntityAlreadyRegistere
 
 -- | Constructs EntityAlreadyRegisteredException from required parameters
 newEntityAlreadyRegisteredException :: EntityAlreadyRegisteredException
-newEntityAlreadyRegisteredException  = EntityAlreadyRegisteredException { "Message": (NullOrUndefined Nothing) }
+newEntityAlreadyRegisteredException  = EntityAlreadyRegisteredException { "Message": Nothing }
 
 -- | Constructs EntityAlreadyRegisteredException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEntityAlreadyRegisteredException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> EntityAlreadyRegisteredException
-newEntityAlreadyRegisteredException'  customize = (EntityAlreadyRegisteredException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newEntityAlreadyRegisteredException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> EntityAlreadyRegisteredException
+newEntityAlreadyRegisteredException'  customize = (EntityAlreadyRegisteredException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The identifier supplied for the entity is valid, but it does not exist in your organization.</p>
 newtype EntityNotFoundException = EntityNotFoundException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeEntityNotFoundException :: Newtype EntityNotFoundException _
 derive instance repGenericEntityNotFoundException :: Generic EntityNotFoundException _
@@ -798,12 +797,12 @@ instance encodeEntityNotFoundException :: Encode EntityNotFoundException where e
 
 -- | Constructs EntityNotFoundException from required parameters
 newEntityNotFoundException :: EntityNotFoundException
-newEntityNotFoundException  = EntityNotFoundException { "Message": (NullOrUndefined Nothing) }
+newEntityNotFoundException  = EntityNotFoundException { "Message": Nothing }
 
 -- | Constructs EntityNotFoundException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEntityNotFoundException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> EntityNotFoundException
-newEntityNotFoundException'  customize = (EntityNotFoundException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newEntityNotFoundException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> EntityNotFoundException
+newEntityNotFoundException'  customize = (EntityNotFoundException <<< customize) { "Message": Nothing }
 
 
 
@@ -818,7 +817,7 @@ instance encodeEntityState :: Encode EntityState where encode = genericEncode op
 
 -- | <p>You are performing an operation on an entity that isn't in the expected state, such as trying to update a deleted user.</p>
 newtype EntityStateException = EntityStateException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeEntityStateException :: Newtype EntityStateException _
 derive instance repGenericEntityStateException :: Generic EntityStateException _
@@ -828,23 +827,23 @@ instance encodeEntityStateException :: Encode EntityStateException where encode 
 
 -- | Constructs EntityStateException from required parameters
 newEntityStateException :: EntityStateException
-newEntityStateException  = EntityStateException { "Message": (NullOrUndefined Nothing) }
+newEntityStateException  = EntityStateException { "Message": Nothing }
 
 -- | Constructs EntityStateException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEntityStateException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> EntityStateException
-newEntityStateException'  customize = (EntityStateException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newEntityStateException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> EntityStateException
+newEntityStateException'  customize = (EntityStateException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The representation of an Amazon WorkMail group.</p>
 newtype Group = Group 
-  { "Id" :: NullOrUndefined (WorkMailIdentifier)
-  , "Email" :: NullOrUndefined (EmailAddress)
-  , "Name" :: NullOrUndefined (GroupName)
-  , "State" :: NullOrUndefined (EntityState)
-  , "EnabledDate" :: NullOrUndefined (Types.Timestamp)
-  , "DisabledDate" :: NullOrUndefined (Types.Timestamp)
+  { "Id" :: Maybe (WorkMailIdentifier)
+  , "Email" :: Maybe (EmailAddress)
+  , "Name" :: Maybe (GroupName)
+  , "State" :: Maybe (EntityState)
+  , "EnabledDate" :: Maybe (Types.Timestamp)
+  , "DisabledDate" :: Maybe (Types.Timestamp)
   }
 derive instance newtypeGroup :: Newtype Group _
 derive instance repGenericGroup :: Generic Group _
@@ -854,12 +853,12 @@ instance encodeGroup :: Encode Group where encode = genericEncode options
 
 -- | Constructs Group from required parameters
 newGroup :: Group
-newGroup  = Group { "DisabledDate": (NullOrUndefined Nothing), "Email": (NullOrUndefined Nothing), "EnabledDate": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newGroup  = Group { "DisabledDate": Nothing, "Email": Nothing, "EnabledDate": Nothing, "Id": Nothing, "Name": Nothing, "State": Nothing }
 
 -- | Constructs Group's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGroup' :: ( { "Id" :: NullOrUndefined (WorkMailIdentifier) , "Email" :: NullOrUndefined (EmailAddress) , "Name" :: NullOrUndefined (GroupName) , "State" :: NullOrUndefined (EntityState) , "EnabledDate" :: NullOrUndefined (Types.Timestamp) , "DisabledDate" :: NullOrUndefined (Types.Timestamp) } -> {"Id" :: NullOrUndefined (WorkMailIdentifier) , "Email" :: NullOrUndefined (EmailAddress) , "Name" :: NullOrUndefined (GroupName) , "State" :: NullOrUndefined (EntityState) , "EnabledDate" :: NullOrUndefined (Types.Timestamp) , "DisabledDate" :: NullOrUndefined (Types.Timestamp) } ) -> Group
-newGroup'  customize = (Group <<< customize) { "DisabledDate": (NullOrUndefined Nothing), "Email": (NullOrUndefined Nothing), "EnabledDate": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newGroup' :: ( { "Id" :: Maybe (WorkMailIdentifier) , "Email" :: Maybe (EmailAddress) , "Name" :: Maybe (GroupName) , "State" :: Maybe (EntityState) , "EnabledDate" :: Maybe (Types.Timestamp) , "DisabledDate" :: Maybe (Types.Timestamp) } -> {"Id" :: Maybe (WorkMailIdentifier) , "Email" :: Maybe (EmailAddress) , "Name" :: Maybe (GroupName) , "State" :: Maybe (EntityState) , "EnabledDate" :: Maybe (Types.Timestamp) , "DisabledDate" :: Maybe (Types.Timestamp) } ) -> Group
+newGroup'  customize = (Group <<< customize) { "DisabledDate": Nothing, "Email": Nothing, "EnabledDate": Nothing, "Id": Nothing, "Name": Nothing, "State": Nothing }
 
 
 
@@ -883,7 +882,7 @@ instance encodeGroups :: Encode Groups where encode = genericEncode options
 
 -- | <p>The configuration for a resource isn't valid. A resource must either be able to auto-respond to requests or have at least one delegate associated that can do it on its behalf.</p>
 newtype InvalidConfigurationException = InvalidConfigurationException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidConfigurationException :: Newtype InvalidConfigurationException _
 derive instance repGenericInvalidConfigurationException :: Generic InvalidConfigurationException _
@@ -893,18 +892,18 @@ instance encodeInvalidConfigurationException :: Encode InvalidConfigurationExcep
 
 -- | Constructs InvalidConfigurationException from required parameters
 newInvalidConfigurationException :: InvalidConfigurationException
-newInvalidConfigurationException  = InvalidConfigurationException { "Message": (NullOrUndefined Nothing) }
+newInvalidConfigurationException  = InvalidConfigurationException { "Message": Nothing }
 
 -- | Constructs InvalidConfigurationException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidConfigurationException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidConfigurationException
-newInvalidConfigurationException'  customize = (InvalidConfigurationException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidConfigurationException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidConfigurationException
+newInvalidConfigurationException'  customize = (InvalidConfigurationException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>One or more of the input parameters don't match the service's restrictions.</p>
 newtype InvalidParameterException = InvalidParameterException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidParameterException :: Newtype InvalidParameterException _
 derive instance repGenericInvalidParameterException :: Generic InvalidParameterException _
@@ -914,18 +913,18 @@ instance encodeInvalidParameterException :: Encode InvalidParameterException whe
 
 -- | Constructs InvalidParameterException from required parameters
 newInvalidParameterException :: InvalidParameterException
-newInvalidParameterException  = InvalidParameterException { "Message": (NullOrUndefined Nothing) }
+newInvalidParameterException  = InvalidParameterException { "Message": Nothing }
 
 -- | Constructs InvalidParameterException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidParameterException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidParameterException
-newInvalidParameterException'  customize = (InvalidParameterException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidParameterException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidParameterException
+newInvalidParameterException'  customize = (InvalidParameterException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The supplied password doesn't match the minimum security constraints, such as length or use of special characters.</p>
 newtype InvalidPasswordException = InvalidPasswordException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidPasswordException :: Newtype InvalidPasswordException _
 derive instance repGenericInvalidPasswordException :: Generic InvalidPasswordException _
@@ -935,20 +934,20 @@ instance encodeInvalidPasswordException :: Encode InvalidPasswordException where
 
 -- | Constructs InvalidPasswordException from required parameters
 newInvalidPasswordException :: InvalidPasswordException
-newInvalidPasswordException  = InvalidPasswordException { "Message": (NullOrUndefined Nothing) }
+newInvalidPasswordException  = InvalidPasswordException { "Message": Nothing }
 
 -- | Constructs InvalidPasswordException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidPasswordException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidPasswordException
-newInvalidPasswordException'  customize = (InvalidPasswordException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidPasswordException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidPasswordException
+newInvalidPasswordException'  customize = (InvalidPasswordException <<< customize) { "Message": Nothing }
 
 
 
 newtype ListAliasesRequest = ListAliasesRequest 
   { "OrganizationId" :: (OrganizationId)
   , "EntityId" :: (WorkMailIdentifier)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (MaxResults)
   }
 derive instance newtypeListAliasesRequest :: Newtype ListAliasesRequest _
 derive instance repGenericListAliasesRequest :: Generic ListAliasesRequest _
@@ -958,18 +957,18 @@ instance encodeListAliasesRequest :: Encode ListAliasesRequest where encode = ge
 
 -- | Constructs ListAliasesRequest from required parameters
 newListAliasesRequest :: WorkMailIdentifier -> OrganizationId -> ListAliasesRequest
-newListAliasesRequest _EntityId _OrganizationId = ListAliasesRequest { "EntityId": _EntityId, "OrganizationId": _OrganizationId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListAliasesRequest _EntityId _OrganizationId = ListAliasesRequest { "EntityId": _EntityId, "OrganizationId": _OrganizationId, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListAliasesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListAliasesRequest' :: WorkMailIdentifier -> OrganizationId -> ( { "OrganizationId" :: (OrganizationId) , "EntityId" :: (WorkMailIdentifier) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } -> {"OrganizationId" :: (OrganizationId) , "EntityId" :: (WorkMailIdentifier) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } ) -> ListAliasesRequest
-newListAliasesRequest' _EntityId _OrganizationId customize = (ListAliasesRequest <<< customize) { "EntityId": _EntityId, "OrganizationId": _OrganizationId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListAliasesRequest' :: WorkMailIdentifier -> OrganizationId -> ( { "OrganizationId" :: (OrganizationId) , "EntityId" :: (WorkMailIdentifier) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } -> {"OrganizationId" :: (OrganizationId) , "EntityId" :: (WorkMailIdentifier) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } ) -> ListAliasesRequest
+newListAliasesRequest' _EntityId _OrganizationId customize = (ListAliasesRequest <<< customize) { "EntityId": _EntityId, "OrganizationId": _OrganizationId, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListAliasesResponse = ListAliasesResponse 
-  { "Aliases" :: NullOrUndefined (Aliases)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Aliases" :: Maybe (Aliases)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListAliasesResponse :: Newtype ListAliasesResponse _
 derive instance repGenericListAliasesResponse :: Generic ListAliasesResponse _
@@ -979,20 +978,20 @@ instance encodeListAliasesResponse :: Encode ListAliasesResponse where encode = 
 
 -- | Constructs ListAliasesResponse from required parameters
 newListAliasesResponse :: ListAliasesResponse
-newListAliasesResponse  = ListAliasesResponse { "Aliases": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListAliasesResponse  = ListAliasesResponse { "Aliases": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListAliasesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListAliasesResponse' :: ( { "Aliases" :: NullOrUndefined (Aliases) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Aliases" :: NullOrUndefined (Aliases) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListAliasesResponse
-newListAliasesResponse'  customize = (ListAliasesResponse <<< customize) { "Aliases": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListAliasesResponse' :: ( { "Aliases" :: Maybe (Aliases) , "NextToken" :: Maybe (NextToken) } -> {"Aliases" :: Maybe (Aliases) , "NextToken" :: Maybe (NextToken) } ) -> ListAliasesResponse
+newListAliasesResponse'  customize = (ListAliasesResponse <<< customize) { "Aliases": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListGroupMembersRequest = ListGroupMembersRequest 
   { "OrganizationId" :: (OrganizationId)
   , "GroupId" :: (WorkMailIdentifier)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (MaxResults)
   }
 derive instance newtypeListGroupMembersRequest :: Newtype ListGroupMembersRequest _
 derive instance repGenericListGroupMembersRequest :: Generic ListGroupMembersRequest _
@@ -1002,18 +1001,18 @@ instance encodeListGroupMembersRequest :: Encode ListGroupMembersRequest where e
 
 -- | Constructs ListGroupMembersRequest from required parameters
 newListGroupMembersRequest :: WorkMailIdentifier -> OrganizationId -> ListGroupMembersRequest
-newListGroupMembersRequest _GroupId _OrganizationId = ListGroupMembersRequest { "GroupId": _GroupId, "OrganizationId": _OrganizationId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListGroupMembersRequest _GroupId _OrganizationId = ListGroupMembersRequest { "GroupId": _GroupId, "OrganizationId": _OrganizationId, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListGroupMembersRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListGroupMembersRequest' :: WorkMailIdentifier -> OrganizationId -> ( { "OrganizationId" :: (OrganizationId) , "GroupId" :: (WorkMailIdentifier) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } -> {"OrganizationId" :: (OrganizationId) , "GroupId" :: (WorkMailIdentifier) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } ) -> ListGroupMembersRequest
-newListGroupMembersRequest' _GroupId _OrganizationId customize = (ListGroupMembersRequest <<< customize) { "GroupId": _GroupId, "OrganizationId": _OrganizationId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListGroupMembersRequest' :: WorkMailIdentifier -> OrganizationId -> ( { "OrganizationId" :: (OrganizationId) , "GroupId" :: (WorkMailIdentifier) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } -> {"OrganizationId" :: (OrganizationId) , "GroupId" :: (WorkMailIdentifier) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } ) -> ListGroupMembersRequest
+newListGroupMembersRequest' _GroupId _OrganizationId customize = (ListGroupMembersRequest <<< customize) { "GroupId": _GroupId, "OrganizationId": _OrganizationId, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListGroupMembersResponse = ListGroupMembersResponse 
-  { "Members" :: NullOrUndefined (Members)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Members" :: Maybe (Members)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListGroupMembersResponse :: Newtype ListGroupMembersResponse _
 derive instance repGenericListGroupMembersResponse :: Generic ListGroupMembersResponse _
@@ -1023,19 +1022,19 @@ instance encodeListGroupMembersResponse :: Encode ListGroupMembersResponse where
 
 -- | Constructs ListGroupMembersResponse from required parameters
 newListGroupMembersResponse :: ListGroupMembersResponse
-newListGroupMembersResponse  = ListGroupMembersResponse { "Members": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListGroupMembersResponse  = ListGroupMembersResponse { "Members": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListGroupMembersResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListGroupMembersResponse' :: ( { "Members" :: NullOrUndefined (Members) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Members" :: NullOrUndefined (Members) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListGroupMembersResponse
-newListGroupMembersResponse'  customize = (ListGroupMembersResponse <<< customize) { "Members": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListGroupMembersResponse' :: ( { "Members" :: Maybe (Members) , "NextToken" :: Maybe (NextToken) } -> {"Members" :: Maybe (Members) , "NextToken" :: Maybe (NextToken) } ) -> ListGroupMembersResponse
+newListGroupMembersResponse'  customize = (ListGroupMembersResponse <<< customize) { "Members": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListGroupsRequest = ListGroupsRequest 
   { "OrganizationId" :: (OrganizationId)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (MaxResults)
   }
 derive instance newtypeListGroupsRequest :: Newtype ListGroupsRequest _
 derive instance repGenericListGroupsRequest :: Generic ListGroupsRequest _
@@ -1045,18 +1044,18 @@ instance encodeListGroupsRequest :: Encode ListGroupsRequest where encode = gene
 
 -- | Constructs ListGroupsRequest from required parameters
 newListGroupsRequest :: OrganizationId -> ListGroupsRequest
-newListGroupsRequest _OrganizationId = ListGroupsRequest { "OrganizationId": _OrganizationId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListGroupsRequest _OrganizationId = ListGroupsRequest { "OrganizationId": _OrganizationId, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListGroupsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListGroupsRequest' :: OrganizationId -> ( { "OrganizationId" :: (OrganizationId) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } -> {"OrganizationId" :: (OrganizationId) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } ) -> ListGroupsRequest
-newListGroupsRequest' _OrganizationId customize = (ListGroupsRequest <<< customize) { "OrganizationId": _OrganizationId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListGroupsRequest' :: OrganizationId -> ( { "OrganizationId" :: (OrganizationId) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } -> {"OrganizationId" :: (OrganizationId) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } ) -> ListGroupsRequest
+newListGroupsRequest' _OrganizationId customize = (ListGroupsRequest <<< customize) { "OrganizationId": _OrganizationId, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListGroupsResponse = ListGroupsResponse 
-  { "Groups" :: NullOrUndefined (Groups)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Groups" :: Maybe (Groups)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListGroupsResponse :: Newtype ListGroupsResponse _
 derive instance repGenericListGroupsResponse :: Generic ListGroupsResponse _
@@ -1066,18 +1065,18 @@ instance encodeListGroupsResponse :: Encode ListGroupsResponse where encode = ge
 
 -- | Constructs ListGroupsResponse from required parameters
 newListGroupsResponse :: ListGroupsResponse
-newListGroupsResponse  = ListGroupsResponse { "Groups": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListGroupsResponse  = ListGroupsResponse { "Groups": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListGroupsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListGroupsResponse' :: ( { "Groups" :: NullOrUndefined (Groups) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Groups" :: NullOrUndefined (Groups) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListGroupsResponse
-newListGroupsResponse'  customize = (ListGroupsResponse <<< customize) { "Groups": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListGroupsResponse' :: ( { "Groups" :: Maybe (Groups) , "NextToken" :: Maybe (NextToken) } -> {"Groups" :: Maybe (Groups) , "NextToken" :: Maybe (NextToken) } ) -> ListGroupsResponse
+newListGroupsResponse'  customize = (ListGroupsResponse <<< customize) { "Groups": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListOrganizationsRequest = ListOrganizationsRequest 
-  { "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
+  { "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (MaxResults)
   }
 derive instance newtypeListOrganizationsRequest :: Newtype ListOrganizationsRequest _
 derive instance repGenericListOrganizationsRequest :: Generic ListOrganizationsRequest _
@@ -1087,18 +1086,18 @@ instance encodeListOrganizationsRequest :: Encode ListOrganizationsRequest where
 
 -- | Constructs ListOrganizationsRequest from required parameters
 newListOrganizationsRequest :: ListOrganizationsRequest
-newListOrganizationsRequest  = ListOrganizationsRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListOrganizationsRequest  = ListOrganizationsRequest { "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListOrganizationsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListOrganizationsRequest' :: ( { "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } -> {"NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } ) -> ListOrganizationsRequest
-newListOrganizationsRequest'  customize = (ListOrganizationsRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListOrganizationsRequest' :: ( { "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } -> {"NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } ) -> ListOrganizationsRequest
+newListOrganizationsRequest'  customize = (ListOrganizationsRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListOrganizationsResponse = ListOrganizationsResponse 
-  { "OrganizationSummaries" :: NullOrUndefined (OrganizationSummaries)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "OrganizationSummaries" :: Maybe (OrganizationSummaries)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListOrganizationsResponse :: Newtype ListOrganizationsResponse _
 derive instance repGenericListOrganizationsResponse :: Generic ListOrganizationsResponse _
@@ -1108,20 +1107,20 @@ instance encodeListOrganizationsResponse :: Encode ListOrganizationsResponse whe
 
 -- | Constructs ListOrganizationsResponse from required parameters
 newListOrganizationsResponse :: ListOrganizationsResponse
-newListOrganizationsResponse  = ListOrganizationsResponse { "NextToken": (NullOrUndefined Nothing), "OrganizationSummaries": (NullOrUndefined Nothing) }
+newListOrganizationsResponse  = ListOrganizationsResponse { "NextToken": Nothing, "OrganizationSummaries": Nothing }
 
 -- | Constructs ListOrganizationsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListOrganizationsResponse' :: ( { "OrganizationSummaries" :: NullOrUndefined (OrganizationSummaries) , "NextToken" :: NullOrUndefined (NextToken) } -> {"OrganizationSummaries" :: NullOrUndefined (OrganizationSummaries) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListOrganizationsResponse
-newListOrganizationsResponse'  customize = (ListOrganizationsResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "OrganizationSummaries": (NullOrUndefined Nothing) }
+newListOrganizationsResponse' :: ( { "OrganizationSummaries" :: Maybe (OrganizationSummaries) , "NextToken" :: Maybe (NextToken) } -> {"OrganizationSummaries" :: Maybe (OrganizationSummaries) , "NextToken" :: Maybe (NextToken) } ) -> ListOrganizationsResponse
+newListOrganizationsResponse'  customize = (ListOrganizationsResponse <<< customize) { "NextToken": Nothing, "OrganizationSummaries": Nothing }
 
 
 
 newtype ListResourceDelegatesRequest = ListResourceDelegatesRequest 
   { "OrganizationId" :: (OrganizationId)
   , "ResourceId" :: (WorkMailIdentifier)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (MaxResults)
   }
 derive instance newtypeListResourceDelegatesRequest :: Newtype ListResourceDelegatesRequest _
 derive instance repGenericListResourceDelegatesRequest :: Generic ListResourceDelegatesRequest _
@@ -1131,18 +1130,18 @@ instance encodeListResourceDelegatesRequest :: Encode ListResourceDelegatesReque
 
 -- | Constructs ListResourceDelegatesRequest from required parameters
 newListResourceDelegatesRequest :: OrganizationId -> WorkMailIdentifier -> ListResourceDelegatesRequest
-newListResourceDelegatesRequest _OrganizationId _ResourceId = ListResourceDelegatesRequest { "OrganizationId": _OrganizationId, "ResourceId": _ResourceId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListResourceDelegatesRequest _OrganizationId _ResourceId = ListResourceDelegatesRequest { "OrganizationId": _OrganizationId, "ResourceId": _ResourceId, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListResourceDelegatesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListResourceDelegatesRequest' :: OrganizationId -> WorkMailIdentifier -> ( { "OrganizationId" :: (OrganizationId) , "ResourceId" :: (WorkMailIdentifier) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } -> {"OrganizationId" :: (OrganizationId) , "ResourceId" :: (WorkMailIdentifier) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } ) -> ListResourceDelegatesRequest
-newListResourceDelegatesRequest' _OrganizationId _ResourceId customize = (ListResourceDelegatesRequest <<< customize) { "OrganizationId": _OrganizationId, "ResourceId": _ResourceId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListResourceDelegatesRequest' :: OrganizationId -> WorkMailIdentifier -> ( { "OrganizationId" :: (OrganizationId) , "ResourceId" :: (WorkMailIdentifier) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } -> {"OrganizationId" :: (OrganizationId) , "ResourceId" :: (WorkMailIdentifier) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } ) -> ListResourceDelegatesRequest
+newListResourceDelegatesRequest' _OrganizationId _ResourceId customize = (ListResourceDelegatesRequest <<< customize) { "OrganizationId": _OrganizationId, "ResourceId": _ResourceId, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListResourceDelegatesResponse = ListResourceDelegatesResponse 
-  { "Delegates" :: NullOrUndefined (ResourceDelegates)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Delegates" :: Maybe (ResourceDelegates)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListResourceDelegatesResponse :: Newtype ListResourceDelegatesResponse _
 derive instance repGenericListResourceDelegatesResponse :: Generic ListResourceDelegatesResponse _
@@ -1152,19 +1151,19 @@ instance encodeListResourceDelegatesResponse :: Encode ListResourceDelegatesResp
 
 -- | Constructs ListResourceDelegatesResponse from required parameters
 newListResourceDelegatesResponse :: ListResourceDelegatesResponse
-newListResourceDelegatesResponse  = ListResourceDelegatesResponse { "Delegates": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListResourceDelegatesResponse  = ListResourceDelegatesResponse { "Delegates": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListResourceDelegatesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListResourceDelegatesResponse' :: ( { "Delegates" :: NullOrUndefined (ResourceDelegates) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Delegates" :: NullOrUndefined (ResourceDelegates) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListResourceDelegatesResponse
-newListResourceDelegatesResponse'  customize = (ListResourceDelegatesResponse <<< customize) { "Delegates": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListResourceDelegatesResponse' :: ( { "Delegates" :: Maybe (ResourceDelegates) , "NextToken" :: Maybe (NextToken) } -> {"Delegates" :: Maybe (ResourceDelegates) , "NextToken" :: Maybe (NextToken) } ) -> ListResourceDelegatesResponse
+newListResourceDelegatesResponse'  customize = (ListResourceDelegatesResponse <<< customize) { "Delegates": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListResourcesRequest = ListResourcesRequest 
   { "OrganizationId" :: (OrganizationId)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (MaxResults)
   }
 derive instance newtypeListResourcesRequest :: Newtype ListResourcesRequest _
 derive instance repGenericListResourcesRequest :: Generic ListResourcesRequest _
@@ -1174,18 +1173,18 @@ instance encodeListResourcesRequest :: Encode ListResourcesRequest where encode 
 
 -- | Constructs ListResourcesRequest from required parameters
 newListResourcesRequest :: OrganizationId -> ListResourcesRequest
-newListResourcesRequest _OrganizationId = ListResourcesRequest { "OrganizationId": _OrganizationId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListResourcesRequest _OrganizationId = ListResourcesRequest { "OrganizationId": _OrganizationId, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListResourcesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListResourcesRequest' :: OrganizationId -> ( { "OrganizationId" :: (OrganizationId) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } -> {"OrganizationId" :: (OrganizationId) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } ) -> ListResourcesRequest
-newListResourcesRequest' _OrganizationId customize = (ListResourcesRequest <<< customize) { "OrganizationId": _OrganizationId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListResourcesRequest' :: OrganizationId -> ( { "OrganizationId" :: (OrganizationId) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } -> {"OrganizationId" :: (OrganizationId) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } ) -> ListResourcesRequest
+newListResourcesRequest' _OrganizationId customize = (ListResourcesRequest <<< customize) { "OrganizationId": _OrganizationId, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListResourcesResponse = ListResourcesResponse 
-  { "Resources" :: NullOrUndefined (Resources)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Resources" :: Maybe (Resources)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListResourcesResponse :: Newtype ListResourcesResponse _
 derive instance repGenericListResourcesResponse :: Generic ListResourcesResponse _
@@ -1195,19 +1194,19 @@ instance encodeListResourcesResponse :: Encode ListResourcesResponse where encod
 
 -- | Constructs ListResourcesResponse from required parameters
 newListResourcesResponse :: ListResourcesResponse
-newListResourcesResponse  = ListResourcesResponse { "NextToken": (NullOrUndefined Nothing), "Resources": (NullOrUndefined Nothing) }
+newListResourcesResponse  = ListResourcesResponse { "NextToken": Nothing, "Resources": Nothing }
 
 -- | Constructs ListResourcesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListResourcesResponse' :: ( { "Resources" :: NullOrUndefined (Resources) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Resources" :: NullOrUndefined (Resources) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListResourcesResponse
-newListResourcesResponse'  customize = (ListResourcesResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "Resources": (NullOrUndefined Nothing) }
+newListResourcesResponse' :: ( { "Resources" :: Maybe (Resources) , "NextToken" :: Maybe (NextToken) } -> {"Resources" :: Maybe (Resources) , "NextToken" :: Maybe (NextToken) } ) -> ListResourcesResponse
+newListResourcesResponse'  customize = (ListResourcesResponse <<< customize) { "NextToken": Nothing, "Resources": Nothing }
 
 
 
 newtype ListUsersRequest = ListUsersRequest 
   { "OrganizationId" :: (OrganizationId)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (MaxResults)
   }
 derive instance newtypeListUsersRequest :: Newtype ListUsersRequest _
 derive instance repGenericListUsersRequest :: Generic ListUsersRequest _
@@ -1217,18 +1216,18 @@ instance encodeListUsersRequest :: Encode ListUsersRequest where encode = generi
 
 -- | Constructs ListUsersRequest from required parameters
 newListUsersRequest :: OrganizationId -> ListUsersRequest
-newListUsersRequest _OrganizationId = ListUsersRequest { "OrganizationId": _OrganizationId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListUsersRequest _OrganizationId = ListUsersRequest { "OrganizationId": _OrganizationId, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListUsersRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListUsersRequest' :: OrganizationId -> ( { "OrganizationId" :: (OrganizationId) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } -> {"OrganizationId" :: (OrganizationId) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } ) -> ListUsersRequest
-newListUsersRequest' _OrganizationId customize = (ListUsersRequest <<< customize) { "OrganizationId": _OrganizationId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListUsersRequest' :: OrganizationId -> ( { "OrganizationId" :: (OrganizationId) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } -> {"OrganizationId" :: (OrganizationId) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } ) -> ListUsersRequest
+newListUsersRequest' _OrganizationId customize = (ListUsersRequest <<< customize) { "OrganizationId": _OrganizationId, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListUsersResponse = ListUsersResponse 
-  { "Users" :: NullOrUndefined (Users)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Users" :: Maybe (Users)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListUsersResponse :: Newtype ListUsersResponse _
 derive instance repGenericListUsersResponse :: Generic ListUsersResponse _
@@ -1238,18 +1237,18 @@ instance encodeListUsersResponse :: Encode ListUsersResponse where encode = gene
 
 -- | Constructs ListUsersResponse from required parameters
 newListUsersResponse :: ListUsersResponse
-newListUsersResponse  = ListUsersResponse { "NextToken": (NullOrUndefined Nothing), "Users": (NullOrUndefined Nothing) }
+newListUsersResponse  = ListUsersResponse { "NextToken": Nothing, "Users": Nothing }
 
 -- | Constructs ListUsersResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListUsersResponse' :: ( { "Users" :: NullOrUndefined (Users) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Users" :: NullOrUndefined (Users) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListUsersResponse
-newListUsersResponse'  customize = (ListUsersResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "Users": (NullOrUndefined Nothing) }
+newListUsersResponse' :: ( { "Users" :: Maybe (Users) , "NextToken" :: Maybe (NextToken) } -> {"Users" :: Maybe (Users) , "NextToken" :: Maybe (NextToken) } ) -> ListUsersResponse
+newListUsersResponse'  customize = (ListUsersResponse <<< customize) { "NextToken": Nothing, "Users": Nothing }
 
 
 
 -- | <p>For an email or alias to be created in Amazon WorkMail, the included domain must be defined in the organization.</p>
 newtype MailDomainNotFoundException = MailDomainNotFoundException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeMailDomainNotFoundException :: Newtype MailDomainNotFoundException _
 derive instance repGenericMailDomainNotFoundException :: Generic MailDomainNotFoundException _
@@ -1259,18 +1258,18 @@ instance encodeMailDomainNotFoundException :: Encode MailDomainNotFoundException
 
 -- | Constructs MailDomainNotFoundException from required parameters
 newMailDomainNotFoundException :: MailDomainNotFoundException
-newMailDomainNotFoundException  = MailDomainNotFoundException { "Message": (NullOrUndefined Nothing) }
+newMailDomainNotFoundException  = MailDomainNotFoundException { "Message": Nothing }
 
 -- | Constructs MailDomainNotFoundException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMailDomainNotFoundException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> MailDomainNotFoundException
-newMailDomainNotFoundException'  customize = (MailDomainNotFoundException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newMailDomainNotFoundException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> MailDomainNotFoundException
+newMailDomainNotFoundException'  customize = (MailDomainNotFoundException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>After a domain has been added to the organization, it must be verified. The domain is not yet verified.</p>
 newtype MailDomainStateException = MailDomainStateException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeMailDomainStateException :: Newtype MailDomainStateException _
 derive instance repGenericMailDomainStateException :: Generic MailDomainStateException _
@@ -1280,12 +1279,12 @@ instance encodeMailDomainStateException :: Encode MailDomainStateException where
 
 -- | Constructs MailDomainStateException from required parameters
 newMailDomainStateException :: MailDomainStateException
-newMailDomainStateException  = MailDomainStateException { "Message": (NullOrUndefined Nothing) }
+newMailDomainStateException  = MailDomainStateException { "Message": Nothing }
 
 -- | Constructs MailDomainStateException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMailDomainStateException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> MailDomainStateException
-newMailDomainStateException'  customize = (MailDomainStateException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newMailDomainStateException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> MailDomainStateException
+newMailDomainStateException'  customize = (MailDomainStateException <<< customize) { "Message": Nothing }
 
 
 
@@ -1300,12 +1299,12 @@ instance encodeMaxResults :: Encode MaxResults where encode = genericEncode opti
 
 -- | <p>The representation of a group member (user or group).</p>
 newtype Member = Member 
-  { "Id" :: NullOrUndefined (String)
-  , "Name" :: NullOrUndefined (String)
-  , "Type" :: NullOrUndefined (MemberType)
-  , "State" :: NullOrUndefined (EntityState)
-  , "EnabledDate" :: NullOrUndefined (Types.Timestamp)
-  , "DisabledDate" :: NullOrUndefined (Types.Timestamp)
+  { "Id" :: Maybe (String)
+  , "Name" :: Maybe (String)
+  , "Type" :: Maybe (MemberType)
+  , "State" :: Maybe (EntityState)
+  , "EnabledDate" :: Maybe (Types.Timestamp)
+  , "DisabledDate" :: Maybe (Types.Timestamp)
   }
 derive instance newtypeMember :: Newtype Member _
 derive instance repGenericMember :: Generic Member _
@@ -1315,12 +1314,12 @@ instance encodeMember :: Encode Member where encode = genericEncode options
 
 -- | Constructs Member from required parameters
 newMember :: Member
-newMember  = Member { "DisabledDate": (NullOrUndefined Nothing), "EnabledDate": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newMember  = Member { "DisabledDate": Nothing, "EnabledDate": Nothing, "Id": Nothing, "Name": Nothing, "State": Nothing, "Type": Nothing }
 
 -- | Constructs Member's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMember' :: ( { "Id" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) , "Type" :: NullOrUndefined (MemberType) , "State" :: NullOrUndefined (EntityState) , "EnabledDate" :: NullOrUndefined (Types.Timestamp) , "DisabledDate" :: NullOrUndefined (Types.Timestamp) } -> {"Id" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) , "Type" :: NullOrUndefined (MemberType) , "State" :: NullOrUndefined (EntityState) , "EnabledDate" :: NullOrUndefined (Types.Timestamp) , "DisabledDate" :: NullOrUndefined (Types.Timestamp) } ) -> Member
-newMember'  customize = (Member <<< customize) { "DisabledDate": (NullOrUndefined Nothing), "EnabledDate": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newMember' :: ( { "Id" :: Maybe (String) , "Name" :: Maybe (String) , "Type" :: Maybe (MemberType) , "State" :: Maybe (EntityState) , "EnabledDate" :: Maybe (Types.Timestamp) , "DisabledDate" :: Maybe (Types.Timestamp) } -> {"Id" :: Maybe (String) , "Name" :: Maybe (String) , "Type" :: Maybe (MemberType) , "State" :: Maybe (EntityState) , "EnabledDate" :: Maybe (Types.Timestamp) , "DisabledDate" :: Maybe (Types.Timestamp) } ) -> Member
+newMember'  customize = (Member <<< customize) { "DisabledDate": Nothing, "EnabledDate": Nothing, "Id": Nothing, "Name": Nothing, "State": Nothing, "Type": Nothing }
 
 
 
@@ -1344,7 +1343,7 @@ instance encodeMembers :: Encode Members where encode = genericEncode options
 
 -- | <p>The entity (user, group, or user) name isn't unique in Amazon WorkMail.</p>
 newtype NameAvailabilityException = NameAvailabilityException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeNameAvailabilityException :: Newtype NameAvailabilityException _
 derive instance repGenericNameAvailabilityException :: Generic NameAvailabilityException _
@@ -1354,12 +1353,12 @@ instance encodeNameAvailabilityException :: Encode NameAvailabilityException whe
 
 -- | Constructs NameAvailabilityException from required parameters
 newNameAvailabilityException :: NameAvailabilityException
-newNameAvailabilityException  = NameAvailabilityException { "Message": (NullOrUndefined Nothing) }
+newNameAvailabilityException  = NameAvailabilityException { "Message": Nothing }
 
 -- | Constructs NameAvailabilityException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNameAvailabilityException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> NameAvailabilityException
-newNameAvailabilityException'  customize = (NameAvailabilityException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newNameAvailabilityException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> NameAvailabilityException
+newNameAvailabilityException'  customize = (NameAvailabilityException <<< customize) { "Message": Nothing }
 
 
 
@@ -1392,7 +1391,7 @@ instance encodeOrganizationName :: Encode OrganizationName where encode = generi
 
 -- | <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
 newtype OrganizationNotFoundException = OrganizationNotFoundException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeOrganizationNotFoundException :: Newtype OrganizationNotFoundException _
 derive instance repGenericOrganizationNotFoundException :: Generic OrganizationNotFoundException _
@@ -1402,18 +1401,18 @@ instance encodeOrganizationNotFoundException :: Encode OrganizationNotFoundExcep
 
 -- | Constructs OrganizationNotFoundException from required parameters
 newOrganizationNotFoundException :: OrganizationNotFoundException
-newOrganizationNotFoundException  = OrganizationNotFoundException { "Message": (NullOrUndefined Nothing) }
+newOrganizationNotFoundException  = OrganizationNotFoundException { "Message": Nothing }
 
 -- | Constructs OrganizationNotFoundException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOrganizationNotFoundException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> OrganizationNotFoundException
-newOrganizationNotFoundException'  customize = (OrganizationNotFoundException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newOrganizationNotFoundException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> OrganizationNotFoundException
+newOrganizationNotFoundException'  customize = (OrganizationNotFoundException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its entities.</p>
 newtype OrganizationStateException = OrganizationStateException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeOrganizationStateException :: Newtype OrganizationStateException _
 derive instance repGenericOrganizationStateException :: Generic OrganizationStateException _
@@ -1423,12 +1422,12 @@ instance encodeOrganizationStateException :: Encode OrganizationStateException w
 
 -- | Constructs OrganizationStateException from required parameters
 newOrganizationStateException :: OrganizationStateException
-newOrganizationStateException  = OrganizationStateException { "Message": (NullOrUndefined Nothing) }
+newOrganizationStateException  = OrganizationStateException { "Message": Nothing }
 
 -- | Constructs OrganizationStateException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOrganizationStateException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> OrganizationStateException
-newOrganizationStateException'  customize = (OrganizationStateException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newOrganizationStateException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> OrganizationStateException
+newOrganizationStateException'  customize = (OrganizationStateException <<< customize) { "Message": Nothing }
 
 
 
@@ -1443,10 +1442,10 @@ instance encodeOrganizationSummaries :: Encode OrganizationSummaries where encod
 
 -- | <p>The brief overview associated with an organization.</p>
 newtype OrganizationSummary = OrganizationSummary 
-  { "OrganizationId" :: NullOrUndefined (OrganizationId)
-  , "Alias" :: NullOrUndefined (OrganizationName)
-  , "ErrorMessage" :: NullOrUndefined (String)
-  , "State" :: NullOrUndefined (String)
+  { "OrganizationId" :: Maybe (OrganizationId)
+  , "Alias" :: Maybe (OrganizationName)
+  , "ErrorMessage" :: Maybe (String)
+  , "State" :: Maybe (String)
   }
 derive instance newtypeOrganizationSummary :: Newtype OrganizationSummary _
 derive instance repGenericOrganizationSummary :: Generic OrganizationSummary _
@@ -1456,12 +1455,12 @@ instance encodeOrganizationSummary :: Encode OrganizationSummary where encode = 
 
 -- | Constructs OrganizationSummary from required parameters
 newOrganizationSummary :: OrganizationSummary
-newOrganizationSummary  = OrganizationSummary { "Alias": (NullOrUndefined Nothing), "ErrorMessage": (NullOrUndefined Nothing), "OrganizationId": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newOrganizationSummary  = OrganizationSummary { "Alias": Nothing, "ErrorMessage": Nothing, "OrganizationId": Nothing, "State": Nothing }
 
 -- | Constructs OrganizationSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOrganizationSummary' :: ( { "OrganizationId" :: NullOrUndefined (OrganizationId) , "Alias" :: NullOrUndefined (OrganizationName) , "ErrorMessage" :: NullOrUndefined (String) , "State" :: NullOrUndefined (String) } -> {"OrganizationId" :: NullOrUndefined (OrganizationId) , "Alias" :: NullOrUndefined (OrganizationName) , "ErrorMessage" :: NullOrUndefined (String) , "State" :: NullOrUndefined (String) } ) -> OrganizationSummary
-newOrganizationSummary'  customize = (OrganizationSummary <<< customize) { "Alias": (NullOrUndefined Nothing), "ErrorMessage": (NullOrUndefined Nothing), "OrganizationId": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newOrganizationSummary' :: ( { "OrganizationId" :: Maybe (OrganizationId) , "Alias" :: Maybe (OrganizationName) , "ErrorMessage" :: Maybe (String) , "State" :: Maybe (String) } -> {"OrganizationId" :: Maybe (OrganizationId) , "Alias" :: Maybe (OrganizationName) , "ErrorMessage" :: Maybe (String) , "State" :: Maybe (String) } ) -> OrganizationSummary
+newOrganizationSummary'  customize = (OrganizationSummary <<< customize) { "Alias": Nothing, "ErrorMessage": Nothing, "OrganizationId": Nothing, "State": Nothing }
 
 
 
@@ -1507,7 +1506,7 @@ instance encodeRegisterToWorkMailResponse :: Encode RegisterToWorkMailResponse w
 
 -- | <p>This entity name is not allowed in Amazon WorkMail.</p>
 newtype ReservedNameException = ReservedNameException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeReservedNameException :: Newtype ReservedNameException _
 derive instance repGenericReservedNameException :: Generic ReservedNameException _
@@ -1517,12 +1516,12 @@ instance encodeReservedNameException :: Encode ReservedNameException where encod
 
 -- | Constructs ReservedNameException from required parameters
 newReservedNameException :: ReservedNameException
-newReservedNameException  = ReservedNameException { "Message": (NullOrUndefined Nothing) }
+newReservedNameException  = ReservedNameException { "Message": Nothing }
 
 -- | Constructs ReservedNameException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReservedNameException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> ReservedNameException
-newReservedNameException'  customize = (ReservedNameException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newReservedNameException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> ReservedNameException
+newReservedNameException'  customize = (ReservedNameException <<< customize) { "Message": Nothing }
 
 
 
@@ -1559,13 +1558,13 @@ instance encodeResetPasswordResponse :: Encode ResetPasswordResponse where encod
 
 -- | <p>The overview for a resource containing relevant data regarding it.</p>
 newtype Resource = Resource 
-  { "Id" :: NullOrUndefined (WorkMailIdentifier)
-  , "Email" :: NullOrUndefined (EmailAddress)
-  , "Name" :: NullOrUndefined (ResourceName)
-  , "Type" :: NullOrUndefined (ResourceType)
-  , "State" :: NullOrUndefined (EntityState)
-  , "EnabledDate" :: NullOrUndefined (Types.Timestamp)
-  , "DisabledDate" :: NullOrUndefined (Types.Timestamp)
+  { "Id" :: Maybe (WorkMailIdentifier)
+  , "Email" :: Maybe (EmailAddress)
+  , "Name" :: Maybe (ResourceName)
+  , "Type" :: Maybe (ResourceType)
+  , "State" :: Maybe (EntityState)
+  , "EnabledDate" :: Maybe (Types.Timestamp)
+  , "DisabledDate" :: Maybe (Types.Timestamp)
   }
 derive instance newtypeResource :: Newtype Resource _
 derive instance repGenericResource :: Generic Resource _
@@ -1575,12 +1574,12 @@ instance encodeResource :: Encode Resource where encode = genericEncode options
 
 -- | Constructs Resource from required parameters
 newResource :: Resource
-newResource  = Resource { "DisabledDate": (NullOrUndefined Nothing), "Email": (NullOrUndefined Nothing), "EnabledDate": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newResource  = Resource { "DisabledDate": Nothing, "Email": Nothing, "EnabledDate": Nothing, "Id": Nothing, "Name": Nothing, "State": Nothing, "Type": Nothing }
 
 -- | Constructs Resource's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResource' :: ( { "Id" :: NullOrUndefined (WorkMailIdentifier) , "Email" :: NullOrUndefined (EmailAddress) , "Name" :: NullOrUndefined (ResourceName) , "Type" :: NullOrUndefined (ResourceType) , "State" :: NullOrUndefined (EntityState) , "EnabledDate" :: NullOrUndefined (Types.Timestamp) , "DisabledDate" :: NullOrUndefined (Types.Timestamp) } -> {"Id" :: NullOrUndefined (WorkMailIdentifier) , "Email" :: NullOrUndefined (EmailAddress) , "Name" :: NullOrUndefined (ResourceName) , "Type" :: NullOrUndefined (ResourceType) , "State" :: NullOrUndefined (EntityState) , "EnabledDate" :: NullOrUndefined (Types.Timestamp) , "DisabledDate" :: NullOrUndefined (Types.Timestamp) } ) -> Resource
-newResource'  customize = (Resource <<< customize) { "DisabledDate": (NullOrUndefined Nothing), "Email": (NullOrUndefined Nothing), "EnabledDate": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newResource' :: ( { "Id" :: Maybe (WorkMailIdentifier) , "Email" :: Maybe (EmailAddress) , "Name" :: Maybe (ResourceName) , "Type" :: Maybe (ResourceType) , "State" :: Maybe (EntityState) , "EnabledDate" :: Maybe (Types.Timestamp) , "DisabledDate" :: Maybe (Types.Timestamp) } -> {"Id" :: Maybe (WorkMailIdentifier) , "Email" :: Maybe (EmailAddress) , "Name" :: Maybe (ResourceName) , "Type" :: Maybe (ResourceType) , "State" :: Maybe (EntityState) , "EnabledDate" :: Maybe (Types.Timestamp) , "DisabledDate" :: Maybe (Types.Timestamp) } ) -> Resource
+newResource'  customize = (Resource <<< customize) { "DisabledDate": Nothing, "Email": Nothing, "EnabledDate": Nothing, "Id": Nothing, "Name": Nothing, "State": Nothing, "Type": Nothing }
 
 
 
@@ -1631,7 +1630,7 @@ instance encodeResources :: Encode Resources where encode = genericEncode option
 
 -- | <p>You can't perform a write operation against a read-only directory.</p>
 newtype UnsupportedOperationException = UnsupportedOperationException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeUnsupportedOperationException :: Newtype UnsupportedOperationException _
 derive instance repGenericUnsupportedOperationException :: Generic UnsupportedOperationException _
@@ -1641,12 +1640,12 @@ instance encodeUnsupportedOperationException :: Encode UnsupportedOperationExcep
 
 -- | Constructs UnsupportedOperationException from required parameters
 newUnsupportedOperationException :: UnsupportedOperationException
-newUnsupportedOperationException  = UnsupportedOperationException { "Message": (NullOrUndefined Nothing) }
+newUnsupportedOperationException  = UnsupportedOperationException { "Message": Nothing }
 
 -- | Constructs UnsupportedOperationException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUnsupportedOperationException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> UnsupportedOperationException
-newUnsupportedOperationException'  customize = (UnsupportedOperationException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newUnsupportedOperationException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> UnsupportedOperationException
+newUnsupportedOperationException'  customize = (UnsupportedOperationException <<< customize) { "Message": Nothing }
 
 
 
@@ -1684,8 +1683,8 @@ instance encodeUpdatePrimaryEmailAddressResponse :: Encode UpdatePrimaryEmailAdd
 newtype UpdateResourceRequest = UpdateResourceRequest 
   { "OrganizationId" :: (OrganizationId)
   , "ResourceId" :: (ResourceId)
-  , "Name" :: NullOrUndefined (ResourceName)
-  , "BookingOptions" :: NullOrUndefined (BookingOptions)
+  , "Name" :: Maybe (ResourceName)
+  , "BookingOptions" :: Maybe (BookingOptions)
   }
 derive instance newtypeUpdateResourceRequest :: Newtype UpdateResourceRequest _
 derive instance repGenericUpdateResourceRequest :: Generic UpdateResourceRequest _
@@ -1695,12 +1694,12 @@ instance encodeUpdateResourceRequest :: Encode UpdateResourceRequest where encod
 
 -- | Constructs UpdateResourceRequest from required parameters
 newUpdateResourceRequest :: OrganizationId -> ResourceId -> UpdateResourceRequest
-newUpdateResourceRequest _OrganizationId _ResourceId = UpdateResourceRequest { "OrganizationId": _OrganizationId, "ResourceId": _ResourceId, "BookingOptions": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newUpdateResourceRequest _OrganizationId _ResourceId = UpdateResourceRequest { "OrganizationId": _OrganizationId, "ResourceId": _ResourceId, "BookingOptions": Nothing, "Name": Nothing }
 
 -- | Constructs UpdateResourceRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateResourceRequest' :: OrganizationId -> ResourceId -> ( { "OrganizationId" :: (OrganizationId) , "ResourceId" :: (ResourceId) , "Name" :: NullOrUndefined (ResourceName) , "BookingOptions" :: NullOrUndefined (BookingOptions) } -> {"OrganizationId" :: (OrganizationId) , "ResourceId" :: (ResourceId) , "Name" :: NullOrUndefined (ResourceName) , "BookingOptions" :: NullOrUndefined (BookingOptions) } ) -> UpdateResourceRequest
-newUpdateResourceRequest' _OrganizationId _ResourceId customize = (UpdateResourceRequest <<< customize) { "OrganizationId": _OrganizationId, "ResourceId": _ResourceId, "BookingOptions": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newUpdateResourceRequest' :: OrganizationId -> ResourceId -> ( { "OrganizationId" :: (OrganizationId) , "ResourceId" :: (ResourceId) , "Name" :: Maybe (ResourceName) , "BookingOptions" :: Maybe (BookingOptions) } -> {"OrganizationId" :: (OrganizationId) , "ResourceId" :: (ResourceId) , "Name" :: Maybe (ResourceName) , "BookingOptions" :: Maybe (BookingOptions) } ) -> UpdateResourceRequest
+newUpdateResourceRequest' _OrganizationId _ResourceId customize = (UpdateResourceRequest <<< customize) { "OrganizationId": _OrganizationId, "ResourceId": _ResourceId, "BookingOptions": Nothing, "Name": Nothing }
 
 
 
@@ -1715,14 +1714,14 @@ instance encodeUpdateResourceResponse :: Encode UpdateResourceResponse where enc
 
 -- | <p>The representation of an Amazon WorkMail user.</p>
 newtype User = User 
-  { "Id" :: NullOrUndefined (WorkMailIdentifier)
-  , "Email" :: NullOrUndefined (EmailAddress)
-  , "Name" :: NullOrUndefined (UserName)
-  , "DisplayName" :: NullOrUndefined (String)
-  , "State" :: NullOrUndefined (EntityState)
-  , "UserRole" :: NullOrUndefined (UserRole)
-  , "EnabledDate" :: NullOrUndefined (Types.Timestamp)
-  , "DisabledDate" :: NullOrUndefined (Types.Timestamp)
+  { "Id" :: Maybe (WorkMailIdentifier)
+  , "Email" :: Maybe (EmailAddress)
+  , "Name" :: Maybe (UserName)
+  , "DisplayName" :: Maybe (String)
+  , "State" :: Maybe (EntityState)
+  , "UserRole" :: Maybe (UserRole)
+  , "EnabledDate" :: Maybe (Types.Timestamp)
+  , "DisabledDate" :: Maybe (Types.Timestamp)
   }
 derive instance newtypeUser :: Newtype User _
 derive instance repGenericUser :: Generic User _
@@ -1732,12 +1731,12 @@ instance encodeUser :: Encode User where encode = genericEncode options
 
 -- | Constructs User from required parameters
 newUser :: User
-newUser  = User { "DisabledDate": (NullOrUndefined Nothing), "DisplayName": (NullOrUndefined Nothing), "Email": (NullOrUndefined Nothing), "EnabledDate": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "UserRole": (NullOrUndefined Nothing) }
+newUser  = User { "DisabledDate": Nothing, "DisplayName": Nothing, "Email": Nothing, "EnabledDate": Nothing, "Id": Nothing, "Name": Nothing, "State": Nothing, "UserRole": Nothing }
 
 -- | Constructs User's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUser' :: ( { "Id" :: NullOrUndefined (WorkMailIdentifier) , "Email" :: NullOrUndefined (EmailAddress) , "Name" :: NullOrUndefined (UserName) , "DisplayName" :: NullOrUndefined (String) , "State" :: NullOrUndefined (EntityState) , "UserRole" :: NullOrUndefined (UserRole) , "EnabledDate" :: NullOrUndefined (Types.Timestamp) , "DisabledDate" :: NullOrUndefined (Types.Timestamp) } -> {"Id" :: NullOrUndefined (WorkMailIdentifier) , "Email" :: NullOrUndefined (EmailAddress) , "Name" :: NullOrUndefined (UserName) , "DisplayName" :: NullOrUndefined (String) , "State" :: NullOrUndefined (EntityState) , "UserRole" :: NullOrUndefined (UserRole) , "EnabledDate" :: NullOrUndefined (Types.Timestamp) , "DisabledDate" :: NullOrUndefined (Types.Timestamp) } ) -> User
-newUser'  customize = (User <<< customize) { "DisabledDate": (NullOrUndefined Nothing), "DisplayName": (NullOrUndefined Nothing), "Email": (NullOrUndefined Nothing), "EnabledDate": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "UserRole": (NullOrUndefined Nothing) }
+newUser' :: ( { "Id" :: Maybe (WorkMailIdentifier) , "Email" :: Maybe (EmailAddress) , "Name" :: Maybe (UserName) , "DisplayName" :: Maybe (String) , "State" :: Maybe (EntityState) , "UserRole" :: Maybe (UserRole) , "EnabledDate" :: Maybe (Types.Timestamp) , "DisabledDate" :: Maybe (Types.Timestamp) } -> {"Id" :: Maybe (WorkMailIdentifier) , "Email" :: Maybe (EmailAddress) , "Name" :: Maybe (UserName) , "DisplayName" :: Maybe (String) , "State" :: Maybe (EntityState) , "UserRole" :: Maybe (UserRole) , "EnabledDate" :: Maybe (Types.Timestamp) , "DisabledDate" :: Maybe (Types.Timestamp) } ) -> User
+newUser'  customize = (User <<< customize) { "DisabledDate": Nothing, "DisplayName": Nothing, "Email": Nothing, "EnabledDate": Nothing, "Id": Nothing, "Name": Nothing, "State": Nothing, "UserRole": Nothing }
 
 
 
